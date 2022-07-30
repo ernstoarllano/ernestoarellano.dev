@@ -1,6 +1,6 @@
 export interface LocaleTime {
-  hour?: string,
-  minute?: string,
-  seconds?: string,
+  hour?: string
+  minute?: string
+  seconds?: string
   period?: string
 }

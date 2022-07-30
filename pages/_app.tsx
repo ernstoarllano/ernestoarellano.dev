@@ -1,14 +1,12 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
 import type { AppProps } from 'next/app'
-import { theme } from '../theme'
-import '../styles/globals.css'
+import 'styles/globals.css'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
+  return <Component {...pageProps} />
 }
 
 export default App

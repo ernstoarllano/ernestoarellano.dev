@@ -1,66 +1,55 @@
-import { useState, useEffect } from 'react'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Box, Grid, GridItem, Flex, Heading } from '@chakra-ui/react'
-import useDate from '../hooks/useDate'
-import dynamic from 'next/dynamic'
+import About from 'components/About'
+import LeftColumn from 'components/LeftColumn'
+import Repos from 'components/Repos'
+import RightColumn from 'components/RightColumn'
+import Social from 'components/Social'
+import Spotify from 'components/Spotify'
+import { useSong } from 'hooks/useSong'
+import { Repo } from 'interfaces/Repo'
+import { GetServerSideProps } from 'next'
+import { getRepos } from 'services/getRepos'
 
-const Home: NextPage = () => {
-  const [isScrolled, setIsScrolled] = useState<boolean | false>(false)
-  const backgroundColor = isScrolled ? 'transparent' : 'white'
-  const { hour, minute, seconds, period } = useDate()
+interface HomeProps {
+  repos: Repo[]
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+const Home = ({ repos }: HomeProps) => {
+  const { playing } = useSong()
 
   return (
-    <>
-      <Head>
-        <title>Ernesto Arellano | Front-End Engineer</title>
-      </Head>
-      <Box as='header' pos='fixed' top={0} left={0} right={0} p={8} backgroundColor={backgroundColor} zIndex={50}>
-        <Grid templateColumns='repeat(12, 1fr)'>
-          <GridItem colStart={1} colEnd={6}>
-            <Heading as='h1' fontSize='sm'>
-              <Flex direction='column' alignItems='flex-start' textTransform='uppercase'>
-                <Box as='span' px={2} py={1} textColor='white' backgroundColor='black'>Ernesto Arellano</Box>
-                <Box as='span' px={2} py={1} backgroundColor='white'>Front-End Engineer</Box>
-              </Flex>
-            </Heading>
-          </GridItem>
-          <GridItem colStart={8} colEnd={-1}>
-            <Flex direction='column' alignItems='flex-end' fontSize='xs'>
-              <Box as='span' fontWeight='bold' textTransform='uppercase'>Based in San Diego, CA</Box>
-              <Box as='span' fontWeight='bold'>
-                <Box as='span' display='inline-flex'>{hour}:</Box>
-                <Box as='span' display='inline-flex'>{minute}:</Box>
-                <Box as='span' display='inline-flex' w={4}>{seconds}</Box>
-                <Box as='span' display='inline-flex' ml={1}>{period}</Box>
-              </Box>
-            </Flex>
-          </GridItem>
-        </Grid>
-      </Box>
-      <Box as='main' pos='relative' h='100vh' p={8} zIndex={40}>
-        <Flex alignItems='center' justifyContent='center' h='full'>
-          <Heading as='h2'>In-Development</Heading>
-        </Flex>
-      </Box>
-    </>
+    <main>
+      <div className="relative w-full max-w-[1400px] mx-auto">
+        <LeftColumn>
+          <About />
+          <Social />
+          <div className="flex items-center justify-between">
+            <Spotify song={playing} />
+          </div>
+        </LeftColumn>
+        <RightColumn>
+          <Repos data={repos} />
+        </RightColumn>
+      </div>
+    </main>
   )
 }
 
-export default dynamic(() => Promise.resolve(Home), { ssr: false })
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const repos = await getRepos()
+
+    return {
+      props: {
+        repos,
+      },
+    }
+  } catch (err) {
+    console.error(err)
+
+    return {
+      props: {},
+    }
+  }
+}
+
+export default Home
