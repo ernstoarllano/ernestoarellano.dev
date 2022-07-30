@@ -13,9 +13,9 @@ const Spotify = ({ song }: SpotifyProps) => {
       <div className="flex items-center text-sm space-x-2">
         {song ? (
           <>
-            <span className="font-bold">{song?.artist || 'Offline'}</span>
+            <span className="font-bold">{song?.artist}</span>
             <span className="text-dawn">-</span>
-            <span className="text-dawn">{song?.name || 'Spotify'}</span>
+            <span className="text-dawn">{song?.name}</span>
           </>
         ) : (
           <span className="text-dawn">Offline</span>

@@ -5,13 +5,9 @@ import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
 import Spotify from 'components/Spotify'
 import { useSong } from 'hooks/useSong'
-import { Repo } from 'interfaces/Repo'
+import { HomeProps } from 'interfaces/Home'
 import { GetServerSideProps } from 'next'
 import { getRepos } from 'services/getRepos'
-
-interface HomeProps {
-  repos: Repo[]
-}
 
 const Home = ({ repos }: HomeProps) => {
   const { playing } = useSong()

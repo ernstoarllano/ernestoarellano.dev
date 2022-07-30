@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-inter text-white bg-day dark:bg-night;
+    @apply font-inter text-white bg-night;
   }
 
   progress::-webkit-progress-value,

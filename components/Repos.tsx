@@ -6,7 +6,7 @@ interface ReposProps {
 
 const Repos = ({ data }: ReposProps) => {
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col space-y-3">
       {data.map((repo) => (
         <article
           key={repo.id}
