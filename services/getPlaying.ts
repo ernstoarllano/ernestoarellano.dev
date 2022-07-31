@@ -15,16 +15,14 @@ export const getPlaying = async () => {
     return false
   }
 
-  const song = await res.json()
+  const { item } = await res.json()
 
-  if (song.item === null) {
+  if (item === null) {
     return false
   }
 
-  const name = song.item.name
-  const artist = song.item.artists
-    .map((_artist: any) => _artist.name)
-    .join(', ')
+  const name = item.name
+  const artist = item.artists.map((_artist: any) => _artist.name).join(', ')
 
   return {
     name,

@@ -21,6 +21,9 @@ module.exports = {
         dusk: '#202022',
         day: '#f5ffff',
         dawn: '#949495'
+      },
+      opacity: {
+        important: '1 !important',
       }
     },
   },

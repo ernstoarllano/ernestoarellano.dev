@@ -1,10 +1,10 @@
 const About = () => {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-0 text-2xl lg:text-6xl text-day font-bold">
+      <h1 className="mb-0 text-4xl lg:text-6xl text-day font-bold">
         Ernesto Arellano
       </h1>
-      <h2 className="mt-4 text-lg font-semibold text-day leading-tight">
+      <h2 className="mt-2 text-lg font-semibold text-day tracking-wide">
         Senior Front-End Engineer
       </h2>
       <div className="mt-8 leading-loose">

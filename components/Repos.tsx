@@ -6,11 +6,13 @@ interface ReposProps {
 
 const Repos = ({ data }: ReposProps) => {
   return (
-    <div className="flex flex-col space-y-3">
+    <div id="projects" className="flex flex-col space-y-3 group">
       {data.map((repo) => (
         <article
           key={repo.id}
-          className="bg-dusk transition md:hover:scale-[1.1]"
+          className="bg-dusk transition xl:group-hover:opacity-50 xl:hover:opacity-important xl:hover:scale-[1.1]"
+          itemScope
+          itemType="http://schema.org/CreativeWork"
         >
           <a
             className="block p-10"
@@ -21,8 +23,10 @@ const Repos = ({ data }: ReposProps) => {
             <span className="text-[10px] font-bold uppercase tracking-[3px]">
               {repo.primaryLanguage.name}
             </span>
-            <h3 className="mt-2 mb-0 font-bold">{repo.name}</h3>
-            <p className="mt-2 text-dawn">{repo.description}</p>
+            <h3 className="mt-2 mb-0 font-bold" itemProp="name">
+              {repo.name}
+            </h3>
+            <p className="mt-2 text-base text-dawn">{repo.description}</p>
           </a>
         </article>
       ))}
