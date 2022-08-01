@@ -7,9 +7,13 @@ export const useSong = () => {
 
   useEffect(() => {
     const currentSong = async () => {
-      getPlaying()
-        .then((data) => setPlaying(data))
-        .catch((err) => console.error(err))
+      try {
+        const res = await getPlaying()
+
+        setPlaying(res)
+      } catch (err) {
+        console.error(err)
+      }
     }
 
     const isPlaying = setInterval(currentSong, 30000)

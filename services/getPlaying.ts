@@ -23,9 +23,11 @@ export const getPlaying = async () => {
 
   const name = item.name
   const artist = item.artists.map((_artist: any) => _artist.name).join(', ')
+  const duration = item.duration_ms
 
   return {
     name,
     artist,
+    duration,
   }
 }

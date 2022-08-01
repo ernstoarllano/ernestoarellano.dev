@@ -7,6 +7,7 @@ const nextConfig = {
     spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
     spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET,
     spotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
+    strapiGraqphQLURI: process.env.STRAPI_GRAPHQL_URI,
   }
 }
 

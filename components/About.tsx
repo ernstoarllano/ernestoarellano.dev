@@ -12,7 +12,7 @@ const About = () => {
           {`Hello, I'm a front-end engineer located out of San Diego, CA.`}{' '}
         </p>
         <p className="mt-4 text-base text-dawn">
-          {`I've been building engaging, custom websites for a diverse group of clientele: unions, outdoor hospitality, aviation, etc, for over 10 years with tools like:`}{' '}
+          {`I've been building engaging, custom websites for a diverse group of clientele: unions, outdoor hospitality, aviation, for over 10 years with tools like:`}{' '}
           <u className="text-day">PHP</u>, <u className="text-day">React</u>,{' '}
           <u className="text-day">JavaScript</u>,{' '}
           <u className="text-day">TypeScript</u>,{' '}
