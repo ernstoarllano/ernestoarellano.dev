@@ -6,10 +6,14 @@ export interface Post {
     Slug: string
     publishedAt: string
     categories: {
-      data: {
-        Title: string
-        Slug: string
-      }
+      data: [
+        {
+          attributes: {
+            Title: string
+            Slug: string
+          }
+        }
+      ]
     }
   }
 }
@@ -18,10 +22,12 @@ export interface PostProps {
   title: string
   slug: string
   publishedAt: string
-  category: [
-    attributes: {
-      Title: string
-      Slug: string
+  categories: [
+    {
+      attributes: {
+        Title: string
+        Slug: string
+      }
     }
   ]
 }

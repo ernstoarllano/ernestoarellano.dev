@@ -11,7 +11,7 @@ const Blog = ({ posts }: BlogProps) => {
             title={post.attributes.Title}
             slug={post.attributes.Slug}
             publishedAt={post.attributes.publishedAt}
-            category={post.attributes.categories.data}
+            categories={post.attributes.categories.data}
           />
         ))}
       </div>
