@@ -23,10 +23,10 @@ const Repos = ({ data }: ReposProps) => {
             <span className="text-[10px] font-bold uppercase tracking-[3px]">
               {repo.primaryLanguage.name}
             </span>
-            <h3 className="mt-2 mb-0 font-bold" itemProp="name">
+            <h2 className="mt-2 mb-0 text-2xl font-bold" itemProp="name">
               {repo.name}
-            </h3>
-            <p className="mt-2 text-base text-dawn">{repo.description}</p>
+            </h2>
+            <p className="mt-2 text-sm text-dawn">{repo.description}</p>
           </a>
         </article>
       ))}

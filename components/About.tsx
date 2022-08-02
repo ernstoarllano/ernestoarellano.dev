@@ -6,12 +6,12 @@ const About = ({ content }: AboutProps) => {
       <h1 className="mb-0 text-4xl lg:text-6xl text-day font-bold">
         Ernesto Arellano
       </h1>
-      <h2 className="mt-2 text-lg font-semibold text-day tracking-wide">
+      <h3 className="mt-2 text-lg font-semibold text-day tracking-wide">
         Senior Front-End Engineer
-      </h2>
+      </h3>
       <div className="mt-8 leading-loose">
         <div
-          className="text-base text-dawn space-y-6"
+          className="text-sm leading-loose text-dawn space-y-6"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>

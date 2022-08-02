@@ -28,9 +28,9 @@ const Post = ({ title, slug, publishedAt, categories }: PostProps) => {
               </div>
             </header>
             <div className="flex flex-col">
-              <h3 className="mt-2 mb-0 text-2xl font-bold" itemProp="headline">
+              <h2 className="mt-2 mb-0 text-2xl font-bold" itemProp="headline">
                 {title}
-              </h3>
+              </h2>
             </div>
           </div>
         </a>

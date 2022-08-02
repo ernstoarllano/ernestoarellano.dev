@@ -4,6 +4,7 @@ import { getPost } from 'graphql/queries'
 import { getCategory } from 'helpers/getCategory'
 import { getDate } from 'helpers/getDate'
 import { getHTML } from 'helpers/getHTML'
+import { getReadTime } from 'helpers/getReadTime'
 import { strapi } from 'lib/strapi'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
@@ -47,10 +48,15 @@ const Post = ({ post }: any) => {
             </header>
           </LeftColumn>
           <RightColumn>
-            <div
-              className="p-10 text-base leading-loose text-dawn bg-dusk space-y-6"
-              dangerouslySetInnerHTML={{ __html: post.value }}
-            />
+            <div className="p-10 bg-dusk space-y-6">
+              <span className="text-[10px] font-bold uppercase tracking-[3px]">
+                {getReadTime(post.value)} min read
+              </span>
+              <div
+                className="text-sm leading-loose text-dawn space-y-6"
+                dangerouslySetInnerHTML={{ __html: post.value }}
+              />
+            </div>
           </RightColumn>
         </article>
       </main>
