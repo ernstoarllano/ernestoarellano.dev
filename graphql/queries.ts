@@ -46,3 +46,16 @@ export const getPost = gql`
     }
   }
 `
+
+export const getPage = gql`
+  query Page($id: ID!) {
+    page(id: $id) {
+      data {
+        id
+        attributes {
+          Body
+        }
+      }
+    }
+  }
+`

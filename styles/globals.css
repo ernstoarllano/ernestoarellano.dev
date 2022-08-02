@@ -4,11 +4,17 @@
 
 @layer base {
   body {
-    @apply font-inter text-white bg-night;
+    @apply font-inter text-white text-render-legibility bg-night;
   }
 
   progress::-webkit-progress-value,
   progress::-moz-progress-bar {
     @apply bg-dawn;
+  }
+}
+
+@layer utilities {
+  .text-render-legibility {
+    text-rendering: optimizeLegibility;
   }
 }

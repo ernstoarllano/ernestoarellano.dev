@@ -3,7 +3,8 @@ import Blog from 'components/Blog'
 import LeftColumn from 'components/LeftColumn'
 import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
-import { getPosts } from 'graphql/queries'
+import { getPage, getPosts } from 'graphql/queries'
+import { getHTML } from 'helpers/getHTML'
 import { useSong } from 'hooks/useSong'
 import { HomeProps } from 'interfaces/Page'
 import { strapi } from 'lib/strapi'
@@ -16,7 +17,7 @@ import { getRepos } from 'services/getRepos'
 const Spotify = dynamic(() => import('components/Spotify'), { suspense: true })
 const Repos = dynamic(() => import('components/Repos'), { suspense: true })
 
-const Home = ({ repos, posts }: HomeProps) => {
+const Home = ({ repos, posts, content }: HomeProps) => {
   const { playing } = useSong()
 
   return (
@@ -27,7 +28,9 @@ const Home = ({ repos, posts }: HomeProps) => {
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
           <LeftColumn>
-            <About />
+            <Suspense fallback="Loading">
+              <About content={content.value} />
+            </Suspense>
             <Social />
             <Suspense fallback="Loading">
               <Spotify song={playing} />
@@ -49,16 +52,26 @@ const Home = ({ repos, posts }: HomeProps) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
+    const {
+      data: { page },
+    } = await strapi.query({
+      query: getPage,
+      variables: { id: 1 },
+    })
     const repos = await getRepos()
     const {
       data: { blogs },
     } = await strapi.query({ query: getPosts })
     const posts = blogs.data
+    const pageContent = await getHTML(page.data.attributes.Body)
 
     return {
       props: {
         repos,
         posts,
+        content: {
+          ...pageContent,
+        },
       },
     }
   } catch (err) {
