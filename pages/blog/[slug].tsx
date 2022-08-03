@@ -1,16 +1,15 @@
 import LeftColumn from 'components/LeftColumn'
 import RightColumn from 'components/RightColumn'
-import { getPost } from 'graphql/queries'
 import { getCategory } from 'helpers/getCategory'
 import { getDate } from 'helpers/getDate'
-import { getHTML } from 'helpers/getHTML'
 import { getReadTime } from 'helpers/getReadTime'
-import { strapi } from 'lib/strapi'
+import { PostPageProps } from 'interfaces/Page'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { getPost } from 'services/getPost'
 
-const Post = ({ post }: any) => {
+const PostPage = ({ post, content }: PostPageProps) => {
   return (
     <>
       <Head>
@@ -50,11 +49,11 @@ const Post = ({ post }: any) => {
           <RightColumn>
             <div className="p-10 bg-dusk space-y-6">
               <span className="text-[10px] font-bold uppercase tracking-[3px]">
-                {getReadTime(post.value)} min read
+                {getReadTime(content)} min read
               </span>
               <div
                 className="text-sm leading-loose text-dawn space-y-6"
-                dangerouslySetInnerHTML={{ __html: post.value }}
+                dangerouslySetInnerHTML={{ __html: content }}
               />
             </div>
           </RightColumn>
@@ -66,18 +65,12 @@ const Post = ({ post }: any) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
-    const { data } = await strapi.query({
-      query: getPost,
-      variables: { slug: params?.slug as string },
-    })
-    const content = await getHTML(data.blogs.data[0].attributes.Body)
+    const { post, content } = await getPost(params?.slug as string)
 
     return {
       props: {
-        post: {
-          ...data.blogs.data[0].attributes,
-          ...content,
-        },
+        post,
+        content,
       },
     }
   } catch (err) {
@@ -89,4 +82,4 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   }
 }
 
-export default Post
+export default PostPage

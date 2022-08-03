@@ -7,14 +7,16 @@ const About = ({ content }: AboutProps) => {
         Ernesto Arellano
       </h1>
       <h3 className="mt-2 text-lg font-light text-day tracking-wide">
-        Senior Full-Stack Developer
+        Senior Full Stack Web Developer
       </h3>
-      <div className="mt-8 leading-loose">
-        <div
-          className="text-sm leading-loose text-dawn space-y-6"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
+      {content && (
+        <div className="mt-8 leading-loose">
+          <div
+            className="text-sm leading-loose text-dawn space-y-6"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </div>
+      )}
     </div>
   )
 }

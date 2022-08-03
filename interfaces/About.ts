@@ -1,3 +1,3 @@
 export interface AboutProps {
-  content: string
+  content: string | ''
 }

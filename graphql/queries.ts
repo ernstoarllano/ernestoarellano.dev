@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const getPosts = gql`
+export const getStrapiPosts = gql`
   query Posts {
     blogs(sort: "id:desc") {
       data {
@@ -23,7 +23,7 @@ export const getPosts = gql`
   }
 `
 
-export const getPost = gql`
+export const getStrapiPost = gql`
   query Posts($slug: String!) {
     blogs(filters: { Slug: { eq: $slug } }) {
       data {
@@ -47,7 +47,7 @@ export const getPost = gql`
   }
 `
 
-export const getPage = gql`
+export const getStrapiPage = gql`
   query Page($id: ID!) {
     page(id: $id) {
       data {

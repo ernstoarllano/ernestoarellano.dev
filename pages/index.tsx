@@ -1,23 +1,26 @@
-import About from 'components/About'
-import Blog from 'components/Blog'
 import LeftColumn from 'components/LeftColumn'
+import AboutLoading from 'components/loading/About'
+import BlogLoading from 'components/loading/Blog'
+import ReposLoading from 'components/loading/Repos'
+import SpotifyLoading from 'components/loading/Spotify'
 import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
-import { getPage, getPosts } from 'graphql/queries'
-import { getHTML } from 'helpers/getHTML'
 import { useSong } from 'hooks/useSong'
-import { HomeProps } from 'interfaces/Page'
-import { strapi } from 'lib/strapi'
+import { HomePageProps } from 'interfaces/Page'
 import { GetServerSideProps } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { Suspense } from 'react'
+import { getPage } from 'services/getPage'
+import { getPosts } from 'services/getPosts'
 import { getRepos } from 'services/getRepos'
 
+const About = dynamic(() => import('components/About'), { suspense: true })
 const Spotify = dynamic(() => import('components/Spotify'), { suspense: true })
 const Repos = dynamic(() => import('components/Repos'), { suspense: true })
+const Blog = dynamic(() => import('components/Blog'), { suspense: true })
 
-const Home = ({ repos, posts, content }: HomeProps) => {
+const HomePage = ({ content, repos, posts }: HomePageProps) => {
   const { playing } = useSong()
 
   return (
@@ -28,19 +31,19 @@ const Home = ({ repos, posts, content }: HomeProps) => {
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
           <LeftColumn>
-            <Suspense fallback="Loading">
-              <About content={content.value} />
+            <Suspense fallback={<AboutLoading />}>
+              <About content={content} />
             </Suspense>
             <Social />
-            <Suspense fallback="Loading">
+            <Suspense fallback={<SpotifyLoading />}>
               <Spotify song={playing} />
             </Suspense>
           </LeftColumn>
           <RightColumn>
-            <Suspense fallback="Loading">
-              <Repos data={repos} />
+            <Suspense fallback={<ReposLoading />}>
+              <Repos repos={repos} />
             </Suspense>
-            <Suspense fallback="Loading">
+            <Suspense fallback={<BlogLoading />}>
               <Blog posts={posts} />
             </Suspense>
           </RightColumn>
@@ -51,36 +54,17 @@ const Home = ({ repos, posts, content }: HomeProps) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const {
-      data: { page },
-    } = await strapi.query({
-      query: getPage,
-      variables: { id: 1 },
-    })
-    const repos = await getRepos()
-    const {
-      data: { blogs },
-    } = await strapi.query({ query: getPosts })
-    const posts = blogs.data
-    const pageContent = await getHTML(page.data.attributes.Body)
+  const { content } = await getPage(1)
+  const { repos } = await getRepos()
+  const { posts } = await getPosts()
 
-    return {
-      props: {
-        repos,
-        posts,
-        content: {
-          ...pageContent,
-        },
-      },
-    }
-  } catch (err) {
-    console.error(err)
-
-    return {
-      props: {},
-    }
+  return {
+    props: {
+      content,
+      repos,
+      posts,
+    },
   }
 }
 
-export default Home
+export default HomePage

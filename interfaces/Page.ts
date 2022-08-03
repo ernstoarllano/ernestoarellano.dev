@@ -1,14 +1,28 @@
 import { Post } from 'interfaces/Post'
 import { Repo } from 'interfaces/Repo'
 
-export interface HomeProps {
-  repos: Repo[]
-  posts: Post[]
-  content: {
-    value: string
-  }
+export interface HomePageProps {
+  content: string | ''
+  repos: Repo[] | []
+  posts: Post[] | []
 }
 
-export interface PostProps {
-  post: Post
+export interface PostPageProps {
+  post: {
+    Title: string
+    Body: string
+    Slug: string
+    publishedAt: string
+    categories: {
+      data: [
+        {
+          attributes: {
+            Title: string
+            Slug: string
+          }
+        }
+      ]
+    }
+  }
+  content: string | ''
 }
