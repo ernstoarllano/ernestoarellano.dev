@@ -3,12 +3,8 @@ import { AboutProps } from 'interfaces/About'
 const About = ({ content }: AboutProps) => {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-0 text-4xl lg:text-6xl text-day font-bold">
-        Ernesto Arellano
-      </h1>
-      <h3 className="mt-2 text-lg font-light text-day tracking-wide">
-        Senior Full Stack Web Developer
-      </h3>
+      <h1>Ernesto Arellano</h1>
+      <h3>Senior Full Stack Web Developer</h3>
       {content && (
         <div className="mt-8 leading-loose">
           <div

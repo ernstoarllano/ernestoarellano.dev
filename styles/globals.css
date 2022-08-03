@@ -7,6 +7,22 @@
     @apply font-inter text-white text-render-legibility bg-night;
   }
 
+  h1 {
+    @apply mb-0 text-4xl lg:text-6xl text-day font-bold;
+  }
+
+  h2 {
+    @apply mt-2 mb-0 text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply mt-2 text-lg font-light text-day tracking-wide;
+  }
+
+  h4 {
+    @apply mb-0 mr-2 xl:mr-0 text-base font-bold;
+  }
+
   li {
     @apply text-sm text-dawn leading-relaxed;
   }
@@ -18,6 +34,15 @@
   progress::-webkit-progress-value,
   progress::-moz-progress-bar {
     @apply bg-dawn;
+  }
+
+  .post ul {
+    @apply pl-6 list-disc space-y-2;
+  }
+
+  .post h4,
+  .post a {
+    @apply text-day;
   }
 }
 

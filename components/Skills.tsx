@@ -1,7 +1,7 @@
 const Skills = () => {
   return (
     <div id="skills" className="xl:pb-32 space-y-6">
-      <h2 className="mt-2 mb-0 text-2xl font-semibold">Skills</h2>
+      <h2>Skills</h2>
       <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6">
         <div id="php" className="flex justify-center">
           <svg viewBox="0 0 800 400" className="w-20 h-20 fill-php php">
@@ -83,6 +83,142 @@ const Skills = () => {
               d="M87.7 200.7V217h52v148h36.9V217h52v-16c0-9 0-16.3-.4-16.5 0-.3-31.7-.4-70.2-.4l-70 .3v16.4l-.3-.1zM321.4 184c10.2 2.4 18 7 25 14.3 3.7 4 9.2 11 9.6 12.8 0 .6-17.3 12.3-27.8 18.8-.4.3-2-1.4-3.6-4-5.2-7.4-10.5-10.6-18.8-11.2-12-.8-20 5.5-20 16 0 3.2.6 5 1.8 7.6 2.7 5.5 7.7 8.8 23.2 15.6 28.6 12.3 41 20.4 48.5 32 8.5 13 10.4 33.4 4.7 48.7-6.4 16.7-22 28-44.3 31.7-7 1.2-23 1-30.5-.3-16-3-31.3-11-40.7-21.3-3.7-4-10.8-14.7-10.4-15.4l3.8-2.4 15-8.7 11.3-6.6 2.6 3.5c3.3 5.2 10.7 12.2 15 14.6 13 6.7 30.4 5.8 39-2 3.7-3.4 5.3-7 5.3-12 0-4.6-.7-6.7-3-10.2-3.2-4.4-9.6-8-27.6-16-20.7-8.8-29.5-14.4-37.7-23-4.7-5.2-9-13.3-11-20-1.5-5.8-2-20-.6-25.7 4.3-20 19.4-34 41-38 7-1.4 23.5-.8 30.4 1l-.2.2z"
               className="fill-day"
             />
+          </svg>
+        </div>
+        <div id="graphql" className="flex justify-center">
+          <svg viewBox="0 0 400 400" className="w-20 h-20 graphql">
+            <title>GraphQL</title>
+            <g>
+              <g>
+                <g>
+                  <rect
+                    x="122"
+                    y="-0.4"
+                    transform="matrix(-0.866 -0.5 0.5 -0.866 163.3196 363.3136)"
+                    width="16.6"
+                    height="320.3"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="39.8"
+                    y="272.2"
+                    width="320.3"
+                    height="16.6"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="37.9"
+                    y="312.2"
+                    transform="matrix(-0.866 -0.5 0.5 -0.866 83.0693 663.3409)"
+                    width="185"
+                    height="16.6"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="177.1"
+                    y="71.1"
+                    transform="matrix(-0.866 -0.5 0.5 -0.866 463.3409 283.0693)"
+                    width="185"
+                    height="16.6"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="122.1"
+                    y="-13"
+                    transform="matrix(-0.5 -0.866 0.866 -0.5 126.7903 232.1221)"
+                    width="16.6"
+                    height="185"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="109.6"
+                    y="151.6"
+                    transform="matrix(-0.5 -0.866 0.866 -0.5 266.0828 473.3766)"
+                    width="320.3"
+                    height="16.6"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="52.5"
+                    y="107.5"
+                    width="16.6"
+                    height="185"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="330.9"
+                    y="107.5"
+                    width="16.6"
+                    height="185"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="262.4"
+                    y="240.1"
+                    transform="matrix(-0.5 -0.866 0.866 -0.5 126.7953 714.2875)"
+                    width="14.5"
+                    height="160.9"
+                    className="fill-graphql"
+                  />
+                </g>
+              </g>
+              <path
+                className="fill-graphql"
+                d="M369.5,297.9c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8   C373.5,259.9,379.2,281.2,369.5,297.9"
+              />
+              <path
+                className="fill-graphql"
+                d="M90.9,137c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8   C94.8,99,100.5,120.3,90.9,137"
+              />
+              <path
+                className="fill-graphql"
+                d="M30.5,297.9c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7   C61.4,320.3,40.1,314.6,30.5,297.9"
+              />
+              <path
+                className="fill-graphql"
+                d="M309.1,137c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7   C340.1,159.4,318.7,153.7,309.1,137"
+              />
+              <path
+                className="fill-graphql"
+                d="M200,395.8c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9   C234.9,380.1,219.3,395.8,200,395.8"
+              />
+              <path
+                className="fill-graphql"
+                d="M200,74c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9   C234.9,58.4,219.3,74,200,74"
+              />
+            </g>
           </svg>
         </div>
         <div id="tailwind" className="flex justify-center">

@@ -14,9 +14,7 @@ const Repo = ({ url, primaryLanguage, name, description }: any) => {
         <span className="text-[10px] font-bold uppercase tracking-[3px]">
           {primaryLanguage.name}
         </span>
-        <h2 className="mt-2 mb-0 text-2xl font-bold" itemProp="name">
-          {name}
-        </h2>
+        <h2 itemProp="name">{name}</h2>
         <p className="mt-2 text-sm text-dawn">{description}</p>
       </a>
     </article>

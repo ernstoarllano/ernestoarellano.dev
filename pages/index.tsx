@@ -54,16 +54,24 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { content } = await getPage(1)
-  const { repos } = await getRepos()
-  const { posts } = await getPosts()
+  try {
+    const { content } = await getPage(1)
+    const { repos } = await getRepos()
+    const { posts } = await getPosts()
 
-  return {
-    props: {
-      content,
-      repos,
-      posts,
-    },
+    return {
+      props: {
+        content,
+        repos,
+        posts,
+      },
+    }
+  } catch (err) {
+    console.error(err)
+
+    return {
+      props: {},
+    }
   }
 }
 

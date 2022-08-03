@@ -20,6 +20,7 @@ module.exports = {
         gatsby: '#639',
         typescript: '#3178c6',
         javascript: '#f7df1e',
+        graphql: '#e535ab',
         tailwind: '#07b6d5',
         sanity: '#f04939',
         strapi: '#8e75ff',
