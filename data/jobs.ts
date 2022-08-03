@@ -12,7 +12,7 @@ export const jobs: Job = [
     id: 1,
     title: 'Senior Full Stack Web Developer / Full Stack Web Developer',
     company: 'Big Rig Media',
-    date: 'July 2013 - Present',
+    date: 'Jul 2013 - Present',
     location: 'La Quinta, CA',
     description: `
       <li>Translate high-profile design wireframes into readable, reusable, maintainable code with PHP, JavaScript, TypeScript, React and Tailwind CSS.</li>
@@ -25,7 +25,7 @@ export const jobs: Job = [
     id: 2,
     title: 'Junior Full Stack Web Developer / Intern',
     company: 'Conveyor Group',
-    date: 'September 2011 - July 2013',
+    date: 'Sep 2011 - Jul 2013',
     location: 'Imperial, CA',
     description: `
       <li>Successfully built a business member directory with search capabilities for Imperial Chamber of Commerce.</li>

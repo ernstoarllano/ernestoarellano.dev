@@ -13,8 +13,12 @@ const Experience = ({ jobs }: ExperienceProps) => {
                   {job.company} - {job.location}
                 </span>
                 <div className="flex items-center justify-between">
-                  <h4 className="mb-0 text-md font-bold">{job.title}</h4>
-                  <span className="text-sm text-dawn">{job.date}</span>
+                  <h4 className="mb-0 mr-2 xl:mr-0 text-md font-bold">
+                    {job.title}
+                  </h4>
+                  <span className="flex flex-grow sm:flex-grow-0 basis-36 sm:basis-auto text-sm text-dawn">
+                    {job.date}
+                  </span>
                 </div>
               </header>
               <ul

@@ -11,7 +11,7 @@ const CV = () => {
   return (
     <>
       <Head>
-        <title>Ernesto Arellano Resume</title>
+        <title>Ernesto Arellano CV</title>
       </Head>
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
