@@ -7,6 +7,10 @@
     @apply font-inter text-white text-render-legibility bg-night;
   }
 
+  li {
+    @apply text-sm text-dawn leading-relaxed;
+  }
+
   strong {
     @apply font-normal text-day underline;
   }

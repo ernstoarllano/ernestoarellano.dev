@@ -14,7 +14,15 @@ module.exports = {
         dusk: '#202022',
         day: '#f5ffff',
         dawn: '#949495',
-        spotify: '#1ed760'
+        spotify: '#1ed760',
+        php: '#787cb5',
+        react: '#61dBfb',
+        typescript: '#3178c6',
+        javascript: '#f7df1e',
+        tailwind: '#07b6d5',
+        sanity: '#f04939',
+        strapi: '#8e75ff',
+        wordpress: '#00749c'
       },
       backgroundColor: {
         night: '#151515',

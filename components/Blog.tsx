@@ -5,7 +5,7 @@ const Blog = ({ posts }: BlogProps) => {
   return (
     <>
       {posts && (
-        <div id="blog">
+        <div id="blog" className="xl:pb-32">
           <div className="grid md:grid-cols-2 gap-3 group">
             {posts.map((post) => (
               <Post
