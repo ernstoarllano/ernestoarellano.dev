@@ -17,6 +17,7 @@ module.exports = {
         spotify: '#1ed760',
         php: '#787cb5',
         react: '#61dBfb',
+        gatsby: '#639',
         typescript: '#3178c6',
         javascript: '#f7df1e',
         tailwind: '#07b6d5',

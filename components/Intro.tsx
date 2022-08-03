@@ -7,7 +7,7 @@ const Intro = () => {
       <h3 className="mt-2 text-lg font-light text-day tracking-wide">
         Senior Full Stack Web Developer
       </h3>
-      <p className="mt-8 text-sm leading-loose">
+      <p className="mt-8 text-sm text-dawn leading-loose">
         Ten years of experience facilitating cutting-edge, engaging, custom
         engineering solutions for a diverse group of clientele. Proven ability
         to collaborate with stakeholders and team members to map out milestones
