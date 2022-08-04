@@ -35,5 +35,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-#strapi
+# strapi
 /backend
+
+# sentry
+.sentryclirc
+sentry.properties
