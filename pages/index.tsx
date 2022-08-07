@@ -7,7 +7,7 @@ import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
 import { useSong } from 'hooks/useSong'
 import { HomePageProps } from 'interfaces/Page'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { Suspense } from 'react'
@@ -53,7 +53,7 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const { content } = await getPage(1)
     const { repos } = await getRepos()
@@ -65,13 +65,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
         repos,
         posts,
       },
+      revalidate: 86400,
     }
   } catch (err) {
     console.error(err)
 
-    return {
-      props: {},
-    }
+    throw err
   }
 }
 
