@@ -5,6 +5,7 @@ import { getCategory } from 'helpers/getCategory'
 import { getDate } from 'helpers/getDate'
 import { getReadTime } from 'helpers/getReadTime'
 import { PostPageProps } from 'interfaces/Page'
+import { Post } from 'interfaces/Post'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -13,7 +14,17 @@ import { getPost } from 'services/getPost'
 import { getPosts } from 'services/getPosts'
 
 const PostPage = ({ post, content }: PostPageProps) => {
-  const { asPath } = useRouter()
+  const { asPath, isFallback } = useRouter()
+
+  if (isFallback) {
+    return (
+      <main className="post">
+        <div className="grid place-content-center relative w-full max-w-[1400px] h-screen mx-auto">
+          <h3 className="text-center">Loading...</h3>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <>
@@ -77,7 +88,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const { posts } = await getPosts()
 
-    const paths = posts.map((post: any) => ({
+    const paths = posts.map((post: Post) => ({
       params: { slug: post.attributes.Slug },
     }))
 
@@ -90,7 +101,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
       paths: [],
-      fallback: false,
+      fallback: 'blocking',
     }
   }
 }
@@ -104,6 +115,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         post,
         content,
       },
+      revalidate: 43200,
     }
   } catch (err) {
     console.error(err)
