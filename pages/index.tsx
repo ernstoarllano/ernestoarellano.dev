@@ -1,24 +1,17 @@
+import About from 'components/About'
+import Blog from 'components/Blog'
 import LeftColumn from 'components/LeftColumn'
-import AboutLoading from 'components/loading/About'
-import BlogLoading from 'components/loading/Blog'
-import ReposLoading from 'components/loading/Repos'
-import SpotifyLoading from 'components/loading/Spotify'
+import Repos from 'components/Repos'
 import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
+import Spotify from 'components/Spotify'
 import { useSong } from 'hooks/useSong'
 import { HomePageProps } from 'interfaces/Page'
 import { GetStaticProps } from 'next'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import { Suspense } from 'react'
 import { getPage } from 'services/getPage'
 import { getPosts } from 'services/getPosts'
 import { getRepos } from 'services/getRepos'
-
-const About = dynamic(() => import('components/About'), { suspense: true })
-const Spotify = dynamic(() => import('components/Spotify'), { suspense: true })
-const Repos = dynamic(() => import('components/Repos'), { suspense: true })
-const Blog = dynamic(() => import('components/Blog'), { suspense: true })
 
 const HomePage = ({ content, repos, posts }: HomePageProps) => {
   const { playing } = useSong()
@@ -31,21 +24,13 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
           <LeftColumn>
-            <Suspense fallback={<AboutLoading />}>
-              <About content={content} />
-            </Suspense>
+            <About content={content} />
             <Social />
-            <Suspense fallback={<SpotifyLoading />}>
-              <Spotify song={playing} />
-            </Suspense>
+            <Spotify song={playing} />
           </LeftColumn>
           <RightColumn>
-            <Suspense fallback={<ReposLoading />}>
-              <Repos repos={repos} />
-            </Suspense>
-            <Suspense fallback={<BlogLoading />}>
-              <Blog posts={posts} />
-            </Suspense>
+            <Repos repos={repos} />
+            <Blog posts={posts} />
           </RightColumn>
         </div>
       </main>
@@ -68,8 +53,6 @@ export const getStaticProps: GetStaticProps = async () => {
       revalidate: 43200,
     }
   } catch (err) {
-    console.error(err)
-
     throw err
   }
 }
