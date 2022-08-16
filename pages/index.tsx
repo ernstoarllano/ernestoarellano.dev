@@ -1,17 +1,24 @@
-import About from 'components/About'
-import Blog from 'components/Blog'
 import LeftColumn from 'components/LeftColumn'
-import Repos from 'components/Repos'
+import AboutLoading from 'components/loading/About'
+import BlogLoading from 'components/loading/Blog'
+import ReposLoading from 'components/loading/Repos'
+import SpotifyLoading from 'components/loading/Spotify'
 import RightColumn from 'components/RightColumn'
 import Social from 'components/Social'
-import Spotify from 'components/Spotify'
 import { useSong } from 'hooks/useSong'
 import { HomePageProps } from 'interfaces/Page'
 import { GetStaticProps } from 'next'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import { Suspense } from 'react'
 import { getPage } from 'services/getPage'
 import { getPosts } from 'services/getPosts'
 import { getRepos } from 'services/getRepos'
+
+const About = dynamic(() => import('components/About'), { suspense: true })
+const Spotify = dynamic(() => import('components/Spotify'), { suspense: true })
+const Repos = dynamic(() => import('components/Repos'), { suspense: true })
+const Blog = dynamic(() => import('components/Blog'), { suspense: true })
 
 const HomePage = ({ content, repos, posts }: HomePageProps) => {
   const { playing } = useSong()
@@ -24,13 +31,21 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
           <LeftColumn>
-            <About content={content} />
+            <Suspense fallback={<AboutLoading />}>
+              <About content={content} />
+            </Suspense>
             <Social />
-            <Spotify song={playing} />
+            <Suspense fallback={<SpotifyLoading />}>
+              <Spotify song={playing} />
+            </Suspense>
           </LeftColumn>
           <RightColumn>
-            <Repos repos={repos} />
-            <Blog posts={posts} />
+            <Suspense fallback={<ReposLoading />}>
+              <Repos repos={repos} />
+            </Suspense>
+            <Suspense fallback={<BlogLoading />}>
+              <Blog posts={posts} />
+            </Suspense>
           </RightColumn>
         </div>
       </main>
