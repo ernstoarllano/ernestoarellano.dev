@@ -32,12 +32,12 @@ const HomePage = ({ content, repos }: HomePageProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const { content } = await getPage(1)
+    const fetchContent = await getPage(1)
     const fetchedRepos = await getRepos()
 
     return {
       props: {
-        content,
+        content: fetchContent?.content,
         repos: fetchedRepos?.repos,
       },
       revalidate: 43200,

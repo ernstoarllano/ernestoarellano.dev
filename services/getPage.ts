@@ -2,7 +2,11 @@ import { getStrapiPage } from 'graphql/queries'
 import { getHTML } from 'helpers/getHTML'
 import { strapi } from 'lib/strapi'
 
-export const getPage = async (id: number) => {
+type PagePromise = {
+  content?: string
+}
+
+export const getPage = async (id: number): Promise<PagePromise | void> => {
   try {
     const { data } = await strapi.query({
       query: getStrapiPage,
@@ -12,7 +16,7 @@ export const getPage = async (id: number) => {
     const pageContent = (await getHTML(page.data.attributes.Body)) || ''
 
     return {
-      content: pageContent.value,
+      content: pageContent.value as string,
     }
   } catch (err) {
     throw err
