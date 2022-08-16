@@ -1,10 +1,10 @@
+import { Repo } from 'interfaces/GitHub'
 import { Post } from 'interfaces/Post'
-import { Repo } from 'interfaces/Repo'
 
 export interface HomePageProps {
   content: string | ''
-  repos: Repo[] | []
-  posts: Post[] | []
+  repos: Repo[]
+  posts: Post[]
 }
 
 export interface PostPageProps {

@@ -10,6 +10,13 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
+        navy: {
+          500: '#112240',
+          900: '#0a192f'
+        },
+        neon: {
+          500: '#64ffda'
+        },
         night: '#151515',
         dusk: '#202022',
         day: '#f5ffff',

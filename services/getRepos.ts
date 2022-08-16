@@ -1,7 +1,12 @@
 import { GraphqlResponseError } from '@octokit/graphql'
+import { Repo } from 'interfaces/GitHub'
 import { octokit } from 'lib/github'
 
-export const getRepos = async () => {
+type ReposPromise = {
+  repos: Repo[] | void
+}
+
+export const getRepos = async (): Promise<ReposPromise> => {
   try {
     const {
       user: {
@@ -29,7 +34,7 @@ export const getRepos = async () => {
     `)
 
     return {
-      repos: nodes || [],
+      repos: nodes,
     }
   } catch (err) {
     if (err instanceof GraphqlResponseError) {

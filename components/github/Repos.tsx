@@ -1,5 +1,5 @@
-import Repo from 'components/Repo'
-import { ReposProps } from 'interfaces/Repos'
+import Repo from 'components/github/Repo'
+import { ReposProps } from 'interfaces/GitHub'
 
 const Repos = ({ repos }: ReposProps) => {
   return (
@@ -10,6 +10,7 @@ const Repos = ({ repos }: ReposProps) => {
             <Repo
               key={repo.id}
               url={repo.url}
+              homepageUrl={repo.homepageUrl}
               primaryLanguage={repo.primaryLanguage}
               name={repo.name}
               description={repo.description}
