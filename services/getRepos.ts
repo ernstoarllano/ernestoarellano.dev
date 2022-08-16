@@ -3,10 +3,10 @@ import { Repo } from 'interfaces/GitHub'
 import { octokit } from 'lib/github'
 
 type ReposPromise = {
-  repos: Repo[] | void
+  repos?: Repo[]
 }
 
-export const getRepos = async (): Promise<ReposPromise> => {
+export const getRepos = async (): Promise<ReposPromise | void> => {
   try {
     const {
       user: {
@@ -40,6 +40,7 @@ export const getRepos = async (): Promise<ReposPromise> => {
     if (err instanceof GraphqlResponseError) {
       console.error(err.message)
     }
+
     throw err
   }
 }

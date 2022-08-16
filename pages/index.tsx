@@ -1,3 +1,4 @@
+import About from 'components/About'
 import Repos from 'components/github/Repos'
 import LeftColumn from 'components/LeftColumn'
 import RightColumn from 'components/RightColumn'
@@ -5,9 +6,10 @@ import Social from 'components/Social'
 import { HomePageProps } from 'interfaces/Page'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { getPage } from 'services/getPage'
 import { getRepos } from 'services/getRepos'
 
-const HomePage = ({ repos }: HomePageProps) => {
+const HomePage = ({ content, repos }: HomePageProps) => {
   return (
     <>
       <Head>
@@ -16,6 +18,7 @@ const HomePage = ({ repos }: HomePageProps) => {
       <main>
         <div className="relative w-full max-w-[1400px] mx-auto">
           <LeftColumn>
+            <About content={content} />
             <Social />
           </LeftColumn>
           <RightColumn>
@@ -29,11 +32,13 @@ const HomePage = ({ repos }: HomePageProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const { repos } = await getRepos()
+    const { content } = await getPage(1)
+    const fetchedRepos = await getRepos()
 
     return {
       props: {
-        repos,
+        content,
+        repos: fetchedRepos?.repos,
       },
       revalidate: 43200,
     }
