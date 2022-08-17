@@ -10,17 +10,10 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        navy: {
-          500: '#112240',
-          900: '#0a192f'
-        },
-        neon: {
-          500: '#64ffda'
-        },
-        night: '#151515',
-        dusk: '#202022',
-        day: '#f5ffff',
-        dawn: '#949495',
+        sand: '#eee8dd',
+        spruce: '#2c3a26',
+        sandstone: '#e8be7c',
+        dawn: '#d7684a',
         spotify: '#1ed760',
         php: '#787cb5',
         react: '#61dBfb',
@@ -32,12 +25,6 @@ module.exports = {
         sanity: '#f04939',
         strapi: '#8e75ff',
         wordpress: '#00749c'
-      },
-      backgroundColor: {
-        night: '#151515',
-        dusk: '#202022',
-        day: '#f5ffff',
-        dawn: '#949495'
       },
       opacity: {
         important: '1 !important',

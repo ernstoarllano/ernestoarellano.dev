@@ -22,6 +22,7 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.8",
+    "classnames": "^2.3.1",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "graphql": "^16.5.0",

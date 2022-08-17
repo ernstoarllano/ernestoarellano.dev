@@ -4,45 +4,29 @@
 
 @layer base {
   body {
-    @apply font-inter text-white text-render-legibility bg-navy-900;
-  }
-
-  h1 {
-    @apply mb-0 text-4xl lg:text-6xl text-day font-bold;
-  }
-
-  h2 {
-    @apply mt-2 mb-0 text-2xl font-semibold;
-  }
-
-  h3 {
-    @apply mt-2 text-lg font-light text-day tracking-wide;
-  }
-
-  h4 {
-    @apply mb-0 mr-2 xl:mr-0 text-base font-bold;
+    @apply text-base font-inter text-sand text-render-legibility bg-spruce;
   }
 
   li {
-    @apply text-sm text-dawn leading-relaxed;
+    @apply text-sm font-medium text-dawn leading-relaxed transition-colors duration-700;
+  }
+}
+
+@layer components {
+  .active .profile {
+    @apply after:w-full before:h-full after:border-sandstone before:border-sandstone;
   }
 
-  strong {
-    @apply font-normal text-day underline;
+  .active .section-title {
+    @apply after:w-[300px] after:bg-sandstone;
   }
 
-  progress::-webkit-progress-value,
-  progress::-moz-progress-bar {
-    @apply bg-dawn;
+  .section-title {
+    @apply flex items-center after:content-[''] after:block after:w-0 after:h-[2px] after:ml-6 after:bg-transparent after:transition-all after:duration-700;
   }
 
-  .post ul {
-    @apply pl-6 list-disc space-y-2;
-  }
-
-  .post h4,
-  .post a {
-    @apply text-day;
+  .profile {
+    @apply lg:col-span-5 lg:self-start relative bg-dawn after:content-[''] after:block after:absolute after:-bottom-[20px] after:-right-[20px] after:w-0 after:border-r-2 after:border-b-2 after:border-solid after:border-transparent after:transition-all after:duration-700 before:content-[''] before:block before:absolute before:-bottom-[20px] before:-right-[20px] before:h-0 before:border-r-2 before:border-b-2 before:border-solid before:border-transparent before:transition-all before:duration-700;
   }
 }
 

@@ -15,7 +15,7 @@ const Repo = ({
     >
       <header className="block relative p-10">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-bold uppercase tracking-[3px]">
+          <span className="text-[10px] font-bold text-neon-500 uppercase tracking-[3px]">
             {primaryLanguage.name}
           </span>
           <a
@@ -34,7 +34,7 @@ const Repo = ({
           </a>
         </div>
         <h2 itemProp="name">{name}</h2>
-        <p className="mt-2 text-sm text-dawn">{description}</p>
+        <p className="mt-2 text-sm text-day">{description}</p>
         {homepageUrl && (
           <a
             className="absolute inset-0 z-40"

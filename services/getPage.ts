@@ -13,7 +13,7 @@ export const getPage = async (id: number): Promise<PagePromise | void> => {
       variables: { id },
     })
     const { page } = data
-    const pageContent = (await getHTML(page.data.attributes.Body)) || ''
+    const pageContent = await getHTML(page.data.attributes.Body)
 
     return {
       content: pageContent.value as string,

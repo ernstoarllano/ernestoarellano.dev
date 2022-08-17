@@ -12,14 +12,14 @@ const Post = ({ title, slug, publishedAt, categories }: PostProps) => {
     >
       <Link href={`/blog/${slug}`}>
         <a>
-          <div className="flex flex-col justify-between w-full h-full p-10 bg-dusk transition xl:group-hover:opacity-50 xl:hover:opacity-important xl:hover:scale-[1.1]">
+          <div className="flex flex-col justify-between w-full h-full p-10 bg-navy-500 transition duration-500 xl:group-hover:opacity-50 xl:hover:opacity-important xl:hover:scale-[1.1] xl:hover:shadow-2xl">
             <header>
               <p className="text-[10px] font-bold uppercase tracking-[3px]">
                 {getCategory(categories)}
               </p>
               <div className="mt-2">
                 <time
-                  className="text-base text-dawn"
+                  className="text-base text-neon-500"
                   dateTime={publishedAt}
                   itemProp="datePublished"
                 >

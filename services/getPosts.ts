@@ -1,13 +1,17 @@
 import { getStrapiPosts } from 'graphql/queries'
 import { strapi } from 'lib/strapi'
 
-export const getPosts = async () => {
+type PostsPromise = {
+  posts?: Record<string, any>[]
+}
+
+export const getPosts = async (): Promise<PostsPromise | void> => {
   try {
     const { data } = await strapi.query({ query: getStrapiPosts })
     const { blogs } = data
 
     return {
-      posts: blogs.data || [],
+      posts: blogs.data,
     }
   } catch (err) {
     throw err

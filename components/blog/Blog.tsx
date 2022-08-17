@@ -1,4 +1,4 @@
-import Post from 'components/Post'
+import Post from 'components/blog/Post'
 import { BlogProps } from 'interfaces/Blog'
 
 const Blog = ({ posts }: BlogProps) => {
