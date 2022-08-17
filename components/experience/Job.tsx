@@ -1,14 +1,6 @@
 import classNames from 'classnames'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
-
-interface JobProps {
-  id: number
-  company: string
-  location: string
-  title: string
-  date: string
-  description: string
-}
+import { JobProps } from 'interfaces/interfaces'
 
 const Job = ({ ...rest }: JobProps) => {
   const options = {

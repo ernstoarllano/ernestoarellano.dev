@@ -1,19 +1,7 @@
 import classNames from 'classnames'
 import Job from 'components/experience/Job'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
-
-interface Job {
-  id: number
-  company: string
-  location: string
-  title: string
-  date: string
-  description: string
-}
-
-interface TimelineProps {
-  jobs: Job[]
-}
+import { TimelineProps } from 'interfaces/interfaces'
 
 const Timeline = ({ jobs }: TimelineProps) => {
   const { ref, isVisible } = useElementOnScreen()

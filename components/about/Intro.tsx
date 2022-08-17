@@ -1,12 +1,9 @@
 import classNames from 'classnames'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
+import { IntroProps } from 'interfaces/interfaces'
 import Image from 'next/image'
 
-interface AboutProps {
-  content?: string
-}
-
-const Intro = ({ content }: AboutProps) => {
+const Intro = ({ content }: IntroProps) => {
   const { ref, isVisible } = useElementOnScreen()
 
   const classes = classNames({
@@ -22,20 +19,11 @@ const Intro = ({ content }: AboutProps) => {
         <div>
           {content && (
             <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-              <div className="lg:col-span-7 leading-relaxed space-y-6">
-                <p>
-                  Well hello there! My name is Ernesto and I enjoy creating
-                  things for the web. I first got into web development back in
-                  2011 when I started messing around with HTML & CSS. Soon after
-                  that I found myself as an intern learning about other things
-                  like PHP, jQuery and plenty more.
-                </p>
-                <p>
-                  Fast forward 10 years and I am still as excited about learning
-                  new technologies as when I first started learning about web
-                  development.
-                </p>
-                <p>{`Below are a few technologies I'm currently working with:`}</p>
+              <div className="lg:col-span-7 space-y-6">
+                <div
+                  className="leading-relaxed space-y-6"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
                 <ul className="lg:grid lg:grid-cols-2 lg:gap-4">
                   <li className="font-bold">TypeScript</li>
                   <li className="font-bold">JavaScript (ES6)</li>

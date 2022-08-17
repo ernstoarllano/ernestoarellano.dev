@@ -1,4 +1,4 @@
-import { LocaleTime } from 'interfaces/LocaleTime'
+import { LocaleTime } from 'interfaces/interfaces'
 import { useEffect, useState } from 'react'
 
 export const useDate = (): LocaleTime => {

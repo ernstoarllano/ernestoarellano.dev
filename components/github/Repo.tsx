@@ -1,4 +1,4 @@
-import { RepoProps } from 'interfaces/GitHub'
+import { RepoProps } from 'interfaces/interfaces'
 
 const Repo = ({
   url,

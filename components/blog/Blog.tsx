@@ -1,6 +1,7 @@
 import Post from 'components/blog/Post'
+import { BlogProps } from 'interfaces/interfaces'
 
-const Blog = ({ posts }: any) => {
+const Blog = ({ posts }: BlogProps) => {
   return (
     <>
       {posts && (

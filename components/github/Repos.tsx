@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Repo from 'components/github/Repo'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
-import { ReposProps } from 'interfaces/GitHub'
+import { ReposProps } from 'interfaces/interfaces'
 
 const Repos = ({ repos }: ReposProps) => {
   const { ref, isVisible } = useElementOnScreen()
