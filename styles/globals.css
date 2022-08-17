@@ -4,29 +4,77 @@
 
 @layer base {
   body {
-    @apply text-base font-inter text-sand text-render-legibility bg-spruce;
+    @apply px-4 lg:px-0 text-base font-inter text-sand text-render-legibility bg-spruce;
   }
 
   li {
-    @apply text-sm font-medium text-dawn leading-relaxed transition-colors duration-700;
+    @apply text-sm font-medium text-sand leading-relaxed transition-colors duration-700;
+  }
+
+  section li {
+    @apply relative pl-4 before:content-['▹'] before:block before:absolute before:left-0 before:text-base before:text-dawn;
   }
 }
 
 @layer components {
-  .active .profile {
+  section.active .profile {
     @apply after:w-full before:h-full after:border-sandstone before:border-sandstone;
   }
 
-  .active .section-title {
+  section.active .section-title {
     @apply after:w-[300px] after:bg-sandstone;
   }
 
+  section.active .timeline {
+    @apply before:h-full before:bg-sandstone;
+  }
+
+  .job.active {
+    @apply opacity-100;
+  }
+
+  .job.active .job-head {
+    @apply before:scale-100;
+  }
+
   .section-title {
-    @apply flex items-center after:content-[''] after:block after:w-0 after:h-[2px] after:ml-6 after:bg-transparent after:transition-all after:duration-700;
+    @apply flex items-center text-sm tracking-widest after:content-[''] after:block after:w-0 after:h-[2px] after:ml-6 after:bg-transparent after:transition-all after:duration-700;
   }
 
   .profile {
-    @apply lg:col-span-5 lg:self-start relative bg-dawn after:content-[''] after:block after:absolute after:-bottom-[20px] after:-right-[20px] after:w-0 after:border-r-2 after:border-b-2 after:border-solid after:border-transparent after:transition-all after:duration-700 before:content-[''] before:block before:absolute before:-bottom-[20px] before:-right-[20px] before:h-0 before:border-r-2 before:border-b-2 before:border-solid before:border-transparent before:transition-all before:duration-700;
+    @apply lg:col-span-5 lg:self-start relative bg-dawn lg:after:content-[''] lg:after:block lg:after:absolute lg:after:-bottom-[20px] lg:after:-right-[20px] lg:after:w-0 lg:after:border-r-2 lg:after:border-b-2 lg:after:border-solid lg:after:border-transparent lg:after:transition-all lg:after:duration-700 lg:before:content-[''] lg:before:block lg:before:absolute lg:before:-bottom-[20px] lg:before:-right-[20px] lg:before:h-0 lg:before:border-r-2 lg:before:border-b-2 lg:before:border-solid lg:before:border-transparent lg:before:transition-all lg:before:duration-700;
+  }
+
+  .timeline {
+    @apply relative py-12 space-y-24 before:content-[''] before:block before:absolute before:top-0 before:inset-x-0 before:w-[2px] before:h-0 before:mx-auto before:bg-transparent before:transition-all before:duration-1000;
+  }
+
+  .job {
+    @apply flex justify-between even:flex-row-reverse relative opacity-0 transition-all duration-700;
+  }
+
+  .job-head {
+    @apply basis-[300px] space-y-6 before:content-[''] before:block before:absolute before:top-0 before:inset-x-0 before:w-10 before:h-10 before:mx-auto before:bg-dawn before:scale-0 before:transition-all before:duration-700 before:rotate-45;
+  }
+
+  .job-title {
+    @apply font-bold;
+  }
+
+  .job-company {
+    @apply text-xs uppercase tracking-widest;
+  }
+
+  .job-description {
+    @apply space-y-6;
+  }
+
+  .job-description li {
+    @apply leading-relaxed;
+  }
+
+  .job-date {
+    @apply basis-[300px] self-start mt-2 text-center;
   }
 }
 

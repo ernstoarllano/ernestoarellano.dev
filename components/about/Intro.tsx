@@ -3,7 +3,7 @@ import { useElementOnScreen } from 'hooks/useElementOnScreen'
 import { AboutProps } from 'interfaces/About'
 import Image from 'next/image'
 
-const About = ({ content }: AboutProps) => {
+const Intro = ({ content }: AboutProps) => {
   const { ref, isVisible } = useElementOnScreen()
 
   const classes = classNames({
@@ -11,19 +11,15 @@ const About = ({ content }: AboutProps) => {
   })
 
   return (
-    <section
-      id="about"
-      className={`flex flex-col space-y-4 ${classes}`}
-      ref={ref}
-    >
-      <div className="w-full lg:max-w-[900px] lg:mx-auto">
+    <section id="about" className={`${classes}`} ref={ref}>
+      <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-6">
+        <h3 className="section-title">
+          <span className="mr-2 text-sandstone">01.</span>About
+        </h3>
         {content && (
           <>
-            <h3 className="section-title">
-              <span className="mr-2 text-sandstone">01.</span>About
-            </h3>
             <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-              <div className="lg:col-span-7 mt-7 leading-loose space-y-6">
+              <div className="lg:col-span-7 leading-relaxed space-y-6">
                 <p>
                   Well hello there! My name is Ernesto and I enjoy creating
                   things for the web. I first got into web development back in
@@ -38,14 +34,14 @@ const About = ({ content }: AboutProps) => {
                 </p>
                 <p>{`Below are a few technologies I'm currently working with:`}</p>
                 <ul className="lg:grid lg:grid-cols-2 lg:gap-4">
-                  <li>TypeScript</li>
-                  <li>JavaScript (ES6)</li>
-                  <li>React</li>
-                  <li>Next.js</li>
-                  <li>Strapi</li>
-                  <li>Sanity</li>
-                  <li>Blade Templates</li>
-                  <li>WordPress</li>
+                  <li className="font-bold">TypeScript</li>
+                  <li className="font-bold">JavaScript (ES6)</li>
+                  <li className="font-bold">React</li>
+                  <li className="font-bold">Next.js</li>
+                  <li className="font-bold">Strapi</li>
+                  <li className="font-bold">Sanity</li>
+                  <li className="font-bold">Blade Templates</li>
+                  <li className="font-bold">WordPress</li>
                 </ul>
               </div>
               <div className="profile">
@@ -66,4 +62,4 @@ const About = ({ content }: AboutProps) => {
   )
 }
 
-export default About
+export default Intro

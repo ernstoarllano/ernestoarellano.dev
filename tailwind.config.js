@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         sand: '#eee8dd',
         spruce: '#2c3a26',
+        moss: '#879365',
         sandstone: '#e8be7c',
         dawn: '#d7684a',
         spotify: '#1ed760',

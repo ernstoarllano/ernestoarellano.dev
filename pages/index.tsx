@@ -1,6 +1,8 @@
-import About from 'components/About'
+import About from 'components/about/Intro'
+import Timeline from 'components/experience/Timeline'
 import Header from 'components/Header'
 import Hero from 'components/Hero'
+import { jobs } from 'data/jobs'
 import { HomePageProps } from 'interfaces/Page'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
@@ -16,8 +18,9 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
       </Head>
       <Header />
       <Hero />
-      <main>
+      <main className="lg:space-y-64">
         <About content={content} />
+        <Timeline jobs={jobs} />
       </main>
     </>
   )
