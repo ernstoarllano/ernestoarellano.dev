@@ -15,6 +15,7 @@ module.exports = {
         moss: '#879365',
         sandstone: '#e8be7c',
         dawn: '#d7684a',
+        charcoal: '#272323',
         spotify: '#1ed760',
         php: '#787cb5',
         react: '#61dBfb',

@@ -1,7 +1,10 @@
 import classNames from 'classnames'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
-import { AboutProps } from 'interfaces/About'
 import Image from 'next/image'
+
+interface AboutProps {
+  content?: string
+}
 
 const Intro = ({ content }: AboutProps) => {
   const { ref, isVisible } = useElementOnScreen()
@@ -12,12 +15,12 @@ const Intro = ({ content }: AboutProps) => {
 
   return (
     <section id="about" className={`${classes}`} ref={ref}>
-      <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-6">
+      <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-24">
         <h3 className="section-title">
           <span className="mr-2 text-sandstone">01.</span>About
         </h3>
-        {content && (
-          <>
+        <div>
+          {content && (
             <div className="lg:grid lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-7 leading-relaxed space-y-6">
                 <p>
@@ -55,8 +58,8 @@ const Intro = ({ content }: AboutProps) => {
                 />
               </div>
             </div>
-          </>
-        )}
+          )}
+        </div>
       </div>
     </section>
   )

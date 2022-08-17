@@ -1,13 +1,13 @@
-type Job = Array<{
+interface Job {
   id: number
   title: string
   company: string
   date: string
   location: string
   description: string
-}>
+}
 
-export const jobs: Job = [
+export const jobs: Job[] = [
   {
     id: 1,
     title: 'Senior Full Stack Web Developer',

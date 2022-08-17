@@ -40,7 +40,7 @@ const Header = () => {
             </li>
             <li className="text-sand before:content-['03.'] before:pr-2 before:text-sandstone">
               <Link href="/">
-                <a>Work</a>
+                <a>Projects</a>
               </Link>
             </li>
             <li className="text-sand before:content-['04.'] before:pr-2 before:text-sandstone">

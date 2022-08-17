@@ -1,9 +1,8 @@
 import { getCategory } from 'helpers/getCategory'
 import { getDate } from 'helpers/getDate'
-import { PostProps } from 'interfaces/Post'
 import Link from 'next/link'
 
-const Post = ({ title, slug, publishedAt, categories }: PostProps) => {
+const Post = ({ title, slug, publishedAt, categories }: any) => {
   return (
     <article
       className="flex-none min-h-[268px] xl:min-h-[368px] xl:odd:-translate-y-10"

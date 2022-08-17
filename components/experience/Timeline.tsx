@@ -1,9 +1,21 @@
 import classNames from 'classnames'
 import Job from 'components/experience/Job'
 import { useElementOnScreen } from 'hooks/useElementOnScreen'
-import { ExperienceProps } from 'interfaces/Experience'
 
-const Timeline = ({ jobs }: ExperienceProps) => {
+interface Job {
+  id: number
+  company: string
+  location: string
+  title: string
+  date: string
+  description: string
+}
+
+interface TimelineProps {
+  jobs: Job[]
+}
+
+const Timeline = ({ jobs }: TimelineProps) => {
   const { ref, isVisible } = useElementOnScreen()
 
   const classes = classNames({

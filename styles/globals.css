@@ -82,4 +82,8 @@
   .text-render-legibility {
     text-rendering: optimizeLegibility;
   }
+
+  .writing-mode-rl {
+    writing-mode: vertical-rl;
+  }
 }

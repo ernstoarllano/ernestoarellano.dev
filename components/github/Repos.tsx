@@ -1,22 +1,37 @@
+import classNames from 'classnames'
 import Repo from 'components/github/Repo'
+import { useElementOnScreen } from 'hooks/useElementOnScreen'
 import { ReposProps } from 'interfaces/GitHub'
 
 const Repos = ({ repos }: ReposProps) => {
+  const { ref, isVisible } = useElementOnScreen()
+
+  const classes = classNames({
+    active: isVisible,
+  })
+
   return (
     <>
       {repos && (
-        <div id="projects" className="flex flex-col space-y-3 group">
-          {repos.map((repo) => (
-            <Repo
-              key={repo.id}
-              url={repo.url}
-              homepageUrl={repo.homepageUrl}
-              primaryLanguage={repo.primaryLanguage}
-              name={repo.name}
-              description={repo.description}
-            />
-          ))}
-        </div>
+        <section id="projects" className={`${classes}`} ref={ref}>
+          <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-24">
+            <h3 className="section-title">
+              <span className="mr-2 text-sandstone">03.</span>Projects
+            </h3>
+            <div className="grid grid-cols-3 gap-3 group">
+              {repos.map((repo) => (
+                <Repo
+                  key={repo.id}
+                  url={repo.url}
+                  homepageUrl={repo.homepageUrl}
+                  primaryLanguage={repo.primaryLanguage}
+                  name={repo.name}
+                  description={repo.description}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       )}
     </>
   )
