@@ -28,34 +28,22 @@ const Header = () => {
         </div>
         <div className="lg:flex lg:items-center lg:space-x-6">
           <ol className="lg:flex lg:items-center lg:space-x-6">
-            <li
-              before="01."
-              className="text-sand before:content-[attr(before)] before:pr-2 before:text-sandstone"
-            >
+            <li className="text-sand before:content-['01.'] before:pr-2 before:text-sandstone">
               <Link href="/">
                 <a>About</a>
               </Link>
             </li>
-            <li
-              before="02."
-              className="text-sand before:content-[attr(before)] before:pr-2 before:text-sandstone"
-            >
+            <li className="text-sand before:content-['02.'] before:pr-2 before:text-sandstone">
               <Link href="/">
                 <a>Experience</a>
               </Link>
             </li>
-            <li
-              before="03."
-              className="text-sand before:content-[attr(before)] before:pr-2 before:text-sandstone"
-            >
+            <li className="text-sand before:content-['03.'] before:pr-2 before:text-sandstone">
               <Link href="/">
                 <a>Work</a>
               </Link>
             </li>
-            <li
-              before="04."
-              className="text-sand before:content-[attr(before)] before:pr-2 before:text-sandstone"
-            >
+            <li className="text-sand before:content-['04.'] before:pr-2 before:text-sandstone">
               <Link href="/">
                 <a>Contact</a>
               </Link>
