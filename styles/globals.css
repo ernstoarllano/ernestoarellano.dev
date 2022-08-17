@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply px-4 lg:px-0 text-base font-inter text-sand text-render-legibility bg-spruce;
+    @apply px-4 lg:px-0 text-base font-poppins font-normal text-sand text-render-legibility bg-spruce;
   }
 
   li {
@@ -17,6 +21,14 @@
 }
 
 @layer components {
+  .header.up {
+    @apply lg:bg-spruce lg:translate-y-0 lg:shadow-2xl;
+  }
+
+  .header.down {
+    @apply lg:-translate-y-full;
+  }
+
   section.active .profile {
     @apply after:w-full before:h-full after:border-sandstone before:border-sandstone;
   }
@@ -35,6 +47,10 @@
 
   .job.active .job-head {
     @apply before:scale-100;
+  }
+
+  .header {
+    @apply lg:flex lg:items-center lg:fixed lg:top-0 lg:right-0 lg:left-0 lg:z-50 lg:h-24 lg:px-14 transition-all duration-500;
   }
 
   .section-title {

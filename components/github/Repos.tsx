@@ -13,7 +13,7 @@ const Repos = ({ repos }: ReposProps) => {
   return (
     <>
       {repos && (
-        <section id="projects" className={`${classes}`} ref={ref}>
+        <section id="projects" className={`scroll-m-8 ${classes}`} ref={ref}>
           <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-24">
             <h3 className="section-title">
               <span className="mr-2 text-sandstone">03.</span>Projects

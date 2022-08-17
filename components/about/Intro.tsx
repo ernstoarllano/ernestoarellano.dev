@@ -14,7 +14,7 @@ const Intro = ({ content }: AboutProps) => {
   })
 
   return (
-    <section id="about" className={`${classes}`} ref={ref}>
+    <section id="about" className={`scroll-m-8 ${classes}`} ref={ref}>
       <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-24">
         <h3 className="section-title">
           <span className="mr-2 text-sandstone">01.</span>About

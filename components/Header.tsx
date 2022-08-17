@@ -1,8 +1,40 @@
+import classNames from 'classnames'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
+  const [y, setY] = useState<number>(0)
+  const [direction, setDirection] = useState<string>('')
+
+  const classes = classNames({
+    down: direction === 'down',
+    up: direction === 'up',
+  })
+
+  useEffect(() => {
+    setY(window.scrollY)
+
+    const handleScroll = () => {
+      setY(window.scrollY)
+
+      if (window.scrollY !== 0) {
+        if (y > window.scrollY) {
+          setDirection('up')
+        } else if (y < window.scrollY) {
+          setDirection('down')
+        }
+      } else {
+        setDirection('')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [y])
+
   return (
-    <header className="lg:flex lg:items-center lg:fixed lg:top-0 lg:right-0 lg:left-0 lg:h-24 lg:px-14">
+    <header className={`header ${classes}`}>
       <nav className="lg:flex lg:items-center lg:justify-between w-full">
         <div>
           <Link href="/">
@@ -29,24 +61,13 @@ const Header = () => {
         <div className="lg:flex lg:items-center lg:space-x-6">
           <ol className="lg:flex lg:items-center lg:space-x-6">
             <li className="text-sand before:content-['01.'] before:pr-2 before:text-sandstone">
-              <Link href="/">
-                <a>About</a>
-              </Link>
+              <a href="#about">About</a>
             </li>
             <li className="text-sand before:content-['02.'] before:pr-2 before:text-sandstone">
-              <Link href="/">
-                <a>Experience</a>
-              </Link>
+              <a href="#experience">Experience</a>
             </li>
             <li className="text-sand before:content-['03.'] before:pr-2 before:text-sandstone">
-              <Link href="/">
-                <a>Projects</a>
-              </Link>
-            </li>
-            <li className="text-sand before:content-['04.'] before:pr-2 before:text-sandstone">
-              <Link href="/">
-                <a>Contact</a>
-              </Link>
+              <a href="#projects">Projects</a>
             </li>
           </ol>
         </div>

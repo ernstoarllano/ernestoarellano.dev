@@ -23,7 +23,7 @@ const Timeline = ({ jobs }: TimelineProps) => {
   })
 
   return (
-    <section id="jobs" className={`${classes}`} ref={ref}>
+    <section id="experience" className={`scroll-m-8 ${classes}`} ref={ref}>
       <div className="w-full lg:max-w-[700px] lg:mx-auto space-y-24">
         <h3 className="section-title">
           <span className="mr-2 text-sandstone">02.</span>Experience

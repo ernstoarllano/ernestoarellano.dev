@@ -22,7 +22,7 @@ const Profiles = ({ profiles }: ProfilesProps) => {
                   rel="noopener noreferrer"
                 >
                   <div
-                    className="fill-sandstone"
+                    className="fill-sandstone transition-all duration-500 hover:fill-dawn"
                     dangerouslySetInnerHTML={{ __html: profile.icon }}
                   />
                 </a>
