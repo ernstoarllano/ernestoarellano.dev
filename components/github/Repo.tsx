@@ -9,7 +9,7 @@ const Repo = ({
 }: RepoProps) => {
   return (
     <article
-      className="bg-sandstone transition duration-500 xl:group-hover:opacity-50 xl:hover:opacity-important xl:hover:scale-[1.1] xl:hover:shadow-2xl"
+      className="bg-sandstone transition duration-500 xl:group-hover:opacity-75 xl:hover:opacity-important xl:hover:scale-[1.1] xl:hover:shadow-2xl"
       itemScope
       itemType="http://schema.org/CreativeWork"
     >
@@ -19,7 +19,7 @@ const Repo = ({
             {primaryLanguage.name}
           </span>
           <a
-            className="relative z-50 link"
+            className="relative z-30 link"
             href={url}
             target="_blank"
             rel="noopener noreferrer"
@@ -39,7 +39,7 @@ const Repo = ({
         <p className="mt-2 text-sm text-charcoal">{description}</p>
         {homepageUrl && (
           <a
-            className="absolute inset-0 z-40"
+            className="absolute inset-0 z-20"
             href={homepageUrl}
             target="_blank"
             rel="noopener noreferrer"

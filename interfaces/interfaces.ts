@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface Repo {
   id: string
   name: string
@@ -98,4 +100,8 @@ export interface JobProps {
 
 export interface TimelineProps {
   jobs: Job[]
+}
+
+export interface HamburgerProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>
 }
