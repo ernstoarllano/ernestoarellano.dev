@@ -2,10 +2,12 @@ import { GraphqlResponseError } from '@octokit/graphql'
 import { octokit } from 'lib/github'
 
 type ReposPromise = {
-  repos?: Record<string, any>[]
+  repos: Record<string, any>[]
 }
 
-export const getRepos = async (): Promise<ReposPromise | void> => {
+export const getRepos = async (): Promise<
+  ReposPromise | Record<any, never>
+> => {
   try {
     const {
       user: {

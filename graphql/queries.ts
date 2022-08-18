@@ -24,7 +24,7 @@ export const getStrapiPosts = gql`
 `
 
 export const getStrapiPost = gql`
-  query Posts($slug: String!) {
+  query Post($slug: String!) {
     blogs(filters: { Slug: { eq: $slug } }) {
       data {
         id

@@ -100,6 +100,18 @@
   .job-date {
     @apply sm:basis-[300px] sm:self-start order-1 sm:order-2 sm:mt-2 sm:text-center;
   }
+
+  .post {
+    @apply py-12;
+  }
+
+  .post h4 {
+    @apply text-dawn font-bold;
+  }
+
+  .post strong {
+    @apply text-sandstone;
+  }
 }
 
 @layer utilities {

@@ -5,7 +5,9 @@ type PostsPromise = {
   posts: Record<string, any>[]
 }
 
-export const getPosts = async (): Promise<PostsPromise | void> => {
+export const getPosts = async (): Promise<
+  PostsPromise | Record<any, never>
+> => {
   try {
     const { data } = await strapi.query({ query: getStrapiPosts })
     const { blogs } = data

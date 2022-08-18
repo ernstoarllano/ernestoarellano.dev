@@ -13,7 +13,7 @@ const Hero = () => {
         </hgroup>
         <p>{`I'm a full-stack web developer (and occassional designer).`}</p>
         <a
-          className="inline-block px-5 py-4 font-semibold text-charcoal tracking-widest uppercase bg-dawn transition-all duration-700 lg:hover:bg-sandstone"
+          className="inline-block px-5 py-3 font-semibold text-charcoal tracking-widest uppercase bg-dawn transition-all duration-700 lg:hover:bg-sandstone"
           href="mailto:ernestoarellano@icloud.com?subject=Referral from ernestoarellano.dev"
         >
           Available for Hire

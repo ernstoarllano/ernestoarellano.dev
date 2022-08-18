@@ -3,10 +3,12 @@ import { getHTML } from 'helpers/getHTML'
 import { strapi } from 'lib/strapi'
 
 type PagePromise = {
-  content?: string
+  content: string
 }
 
-export const getPage = async (id: number): Promise<PagePromise | void> => {
+export const getPage = async (
+  id: number
+): Promise<PagePromise | Record<any, never>> => {
   try {
     const { data } = await strapi.query({
       query: getStrapiPage,
