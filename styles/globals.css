@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply px-4 lg:px-0 text-base font-poppins font-normal text-sand text-render-legibility bg-spruce bg-topography;
+    @apply px-4 lg:px-0 text-base font-poppins font-normal text-sand text-render-legibility bg-spruce bg-topography bg-repeat bg-fixed;
   }
 
   li {
@@ -113,7 +113,5 @@
 
   .bg-topography {
     background-image: url('/topography.svg');
-    background-repeat: repeat;
-    background-size: 40%;
   }
 }
