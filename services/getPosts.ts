@@ -2,7 +2,7 @@ import { getStrapiPosts } from 'graphql/queries'
 import { strapi } from 'lib/strapi'
 
 type PostsPromise = {
-  posts?: Record<string, any>[]
+  posts: Record<string, any>[]
 }
 
 export const getPosts = async (): Promise<PostsPromise | void> => {

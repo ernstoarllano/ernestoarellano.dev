@@ -14,7 +14,7 @@ const Blog = ({ posts }: BlogProps) => {
     <>
       {posts && (
         <section id="blog" className={`scroll-m-8 ${classes}`} ref={ref}>
-          <div className="w-full lg:max-w-[700px] lg:mx-auto space-y-6 lg:space-y-24">
+          <div className="w-full lg:max-w-[700px] lg:mx-auto space-y-12 lg:space-y-24">
             <h3 className="section-title">
               <span className="mr-2 text-sandstone">04.</span>Blog
             </h3>

@@ -12,7 +12,7 @@ const Intro = ({ content }: IntroProps) => {
 
   return (
     <section id="about" className={`scroll-m-8 ${classes}`} ref={ref}>
-      <div className="w-full lg:max-w-[900px] lg:mx-auto space-y-6 lg:space-y-24">
+      <div className="w-full lg:max-w-[800px] xl:max-w-[900px] lg:mx-auto space-y-8 lg:space-y-24">
         <h3 className="section-title">
           <span className="mr-2 text-sandstone">01.</span>About
         </h3>

@@ -10,9 +10,6 @@ const Nav = () => {
       <li className="text-sand hover:text-dawn before:content-['03.'] before:pr-2 before:text-sandstone">
         <a href="#projects">Projects</a>
       </li>
-      <li className="text-sand hover:text-dawn before:content-['04.'] before:pr-2 before:text-sandstone">
-        <a href="#blog">Blog</a>
-      </li>
     </ol>
   )
 }

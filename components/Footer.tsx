@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="xl:pb-32">
-      <span className="text-xs text-dawn">Built with Strapi + Next.js</span>
+    <footer className="py-8">
+      <div className="w-full lg:max-w-[800px] xl:max-w-[900px] lg:mx-auto text-center">
+        <span className="text-xs">Built with Strapi + Next.js</span>
+      </div>
     </footer>
   )
 }

@@ -82,7 +82,6 @@ export interface PostProps {
 export interface HomePageProps {
   content: string
   repos: Repo[]
-  posts: Post[]
 }
 
 export interface IntroProps {

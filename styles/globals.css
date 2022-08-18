@@ -22,11 +22,11 @@
 
 @layer components {
   .header.up {
-    @apply lg:bg-spruce lg:translate-y-0 lg:shadow-2xl;
+    @apply bg-spruce translate-y-0 shadow-2xl;
   }
 
   .header.down {
-    @apply lg:-translate-y-full;
+    @apply -translate-y-full;
   }
 
   .drawer.active {
@@ -54,7 +54,7 @@
   }
 
   .header {
-    @apply lg:flex lg:items-center lg:fixed lg:top-0 lg:right-0 lg:left-0 lg:z-50 lg:h-24 lg:px-14 transition-all duration-500;
+    @apply lg:flex lg:items-center fixed top-0 right-0 left-0 z-50 h-20 lg:h-24 px-4 lg:px-14 transition-all duration-500;
   }
 
   .drawer {
@@ -70,7 +70,7 @@
   }
 
   .timeline {
-    @apply relative py-12 space-y-12 sm:space-y-24 sm:before:content-[''] sm:before:block sm:before:absolute sm:before:top-0 sm:before:inset-x-0 sm:before:w-[2px] sm:before:h-0 sm:before:mx-auto sm:before:bg-transparent sm:before:transition-all sm:before:duration-1000;
+    @apply relative lg:py-12 space-y-12 sm:space-y-24 sm:before:content-[''] sm:before:block sm:before:absolute sm:before:top-0 sm:before:inset-x-0 sm:before:w-[2px] sm:before:h-0 sm:before:mx-auto sm:before:bg-transparent sm:before:transition-all sm:before:duration-1000;
   }
 
   .job {

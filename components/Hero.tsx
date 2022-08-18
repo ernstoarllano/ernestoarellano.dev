@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <section className="flex flex-col items-start justify-center w-full lg:max-w-[1000px] h-[50vh] sm:h-screen xl:mx-auto lg:px-14 xl:px-0">
-      <div className="w-full space-y-6">
+    <section className="flex flex-col items-start justify-center sm:justify-end md:justify-center h-screen sm:mb-20 lg:mb-0">
+      <div className="w-full lg:max-w-[1000px] lg:mx-auto lg:px-16 xl:px-0 space-y-6">
         <span className="font-light text-sandstone">Hi, my name is</span>
         <hgroup className="space-y-4">
           <h1 className="text-5xl lg:text-[80px] font-bold leading-none">
@@ -14,7 +14,7 @@ const Hero = () => {
         <p>{`I'm a full-stack web developer (and occassional designer).`}</p>
         <a
           className="inline-block px-5 py-4 font-semibold text-charcoal tracking-widest uppercase bg-dawn transition-all duration-700 lg:hover:bg-sandstone"
-          href="mailto:ernestoarellano@icloud.com"
+          href="mailto:ernestoarellano@icloud.com?subject=Referral from ernestoarellano.dev"
         >
           Available for Hire
         </a>
