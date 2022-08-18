@@ -14,7 +14,9 @@ const Logo = () => {
             <rect
               x="10"
               y="10"
-              className="w-[528px] h-[528px] stroke-[40px] stroke-dawn"
+              width="528"
+              height="528"
+              className="stroke-[40px] stroke-dawn"
             />
             <path
               d="M257.52 208.2V257.2H323.32V288.28H257.52V340.08H331.72V372H218.32V176.28H331.72V208.2H257.52Z"
