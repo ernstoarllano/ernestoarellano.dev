@@ -1,5 +1,5 @@
 import About from 'components/about/Intro'
-import BlogLoading from 'components/blog/Fallback'
+import Blog from 'components/blog/Blog'
 import Timeline from 'components/experience/Timeline'
 import Footer from 'components/Footer'
 import Repos from 'components/github/Repos'
@@ -10,16 +10,10 @@ import { jobs } from 'data/jobs'
 import { profiles } from 'data/profiles'
 import { HomePageProps } from 'interfaces/interfaces'
 import { GetStaticProps } from 'next'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import { Suspense } from 'react'
 import { getPage } from 'services/getPage'
 import { getPosts } from 'services/getPosts'
 import { getRepos } from 'services/getRepos'
-
-const Blog = dynamic(() => import('components/blog/Blog'), {
-  suspense: true,
-})
 
 const HomePage = ({ content, repos, posts }: HomePageProps) => {
   return (
@@ -33,9 +27,7 @@ const HomePage = ({ content, repos, posts }: HomePageProps) => {
         <About content={content} />
         <Timeline jobs={jobs} />
         <Repos repos={repos} />
-        <Suspense fallback={<BlogLoading />}>
-          <Blog posts={posts} />
-        </Suspense>
+        <Blog posts={posts} />
         <Footer />
       </main>
       <Profiles profiles={profiles} />
