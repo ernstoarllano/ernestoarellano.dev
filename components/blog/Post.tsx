@@ -10,7 +10,7 @@ const Post = ({ title, slug, publishedAt, categories }: PostProps) => {
       itemScope
       itemType="http://schema.org/BlogPosting"
     >
-      <div className="flex flex-col justify-between w-full h-full p-10 text-charcoal bg-sandstone transition duration-500 xl:group-hover:opacity-75 xl:hover:opacity-important xl:hover:scale-[1.1] xl:hover:shadow-2xl">
+      <div className="flex flex-col justify-between relative w-full h-full p-10 text-charcoal bg-sandstone transition duration-500 xl:group-hover:opacity-75 xl:hover:opacity-important xl:hover:scale-[1.1] xl:hover:shadow-2xl">
         <header>
           <p className="text-[10px] font-bold uppercase tracking-[3px]">
             {getCategory(categories)}
