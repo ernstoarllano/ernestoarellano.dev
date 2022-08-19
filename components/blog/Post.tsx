@@ -31,7 +31,7 @@ const Post = ({ title, slug, publishedAt, categories }: PostProps) => {
           </h5>
         </div>
         <Link href={`/blog/${slug}`}>
-          <a className="absolute inset-0 z-20" />
+          <a className="absolute inset-0 z-20"></a>
         </Link>
       </div>
     </article>

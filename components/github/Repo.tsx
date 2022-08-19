@@ -43,7 +43,7 @@ const Repo = ({
             href={homepageUrl}
             target="_blank"
             rel="noopener noreferrer"
-          />
+          ></a>
         )}
       </header>
     </article>
