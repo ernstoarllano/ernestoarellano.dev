@@ -1,89 +1,147 @@
+import { GlobeAltIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { Document, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
-
-const styles = StyleSheet.create({
-  page: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    padding: 60,
-    color: '#272323',
-    backgroundColor: '#eee8dd',
-  },
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
-    justifyContent: 'space-between',
-  },
-  left: {
-    width: 'calc(75% - 15px)',
-  },
-  right: {
-    width: 'calc(25% - 15px)',
-  },
-  h1: {
-    marginBottom: 20,
-    fontSize: 40,
-    fontWeight: 'bold',
-  },
-  h2: {
-    fontSize: 20,
-    fontWeight: 'semibold',
-  },
-  section: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 40,
-  },
-  sectionTitle: {
-    textDecoration: 'underline',
-  },
-  job: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginTop: 40,
-  },
-  jobHead: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  jobRole: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  jobTitle: {
-    fontWeight: 'bold',
-  },
-  jobDate: {
-    fontWeight: 'medium',
-  },
-  jobDescriptionContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginTop: 20,
-  },
-  jobDescription: {
-    marginTop: 10,
-    lineHeight: 1.5,
-  },
-})
+import { useWindowSize } from 'hooks/useWindowSize'
 
 const PDF = () => {
+  const { width } = useWindowSize()
+  const isDesktop = width >= 1024
+
+  const styles = StyleSheet.create({
+    page: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
+      padding: isDesktop ? 60 : 30,
+      color: '#272323',
+      backgroundColor: '#eee8dd',
+    },
+    container: {
+      display: 'flex',
+      flexDirection: isDesktop ? 'row' : 'column',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+    },
+    left: {
+      width: isDesktop ? 'calc(66.6666666667% - 30px)' : '100%',
+    },
+    right: {
+      width: isDesktop ? 'calc(33.3333333333% - 30px)' : '100%',
+    },
+    h1: {
+      marginBottom: isDesktop ? 30 : 10,
+      fontSize: isDesktop ? 60 : 30,
+      fontWeight: 700,
+      color: '#d7684a',
+    },
+    h2: {
+      fontSize: 20,
+    },
+    intro: {
+      display: 'flex',
+      flexDirection: 'column',
+      flexBasis: '100%',
+      marginBottom: 30,
+    },
+    section: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: 40,
+    },
+    sectionTitle: {
+      marginBottom: 20,
+      fontSize: 20,
+      fontWeight: 600,
+      color: '#d7684a',
+    },
+    sectionDescription: {
+      lineHeight: 1.5,
+    },
+    job: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: 30,
+    },
+    jobHead: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    jobRole: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    jobTitle: {
+      fontWeight: 700,
+    },
+    jobCompany: {
+      fontSize: 14,
+      fontWeight: 500,
+    },
+    jobDate: {
+      fontSize: 14,
+      fontWeight: 500,
+    },
+    jobDescriptionContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginTop: 20,
+    },
+    jobDescription: {
+      marginTop: 15,
+      lineHeight: 1.5,
+    },
+    info: {
+      display: 'flex',
+      flexDirection: isDesktop ? 'row' : 'column',
+      flexWrap: 'nowrap',
+      alignItems: isDesktop ? 'center' : 'flex-start',
+      marginTop: 20,
+    },
+    infoText: {
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'nowrap',
+      marginTop: !isDesktop ? 10 : 0,
+      marginRight: 20,
+    },
+    skill: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: 30,
+    },
+    skillTitle: {
+      marginBottom: 15,
+      fontWeight: 600,
+    },
+  })
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.container}>
+          <View style={styles.intro}>
+            <Text style={styles.h1}>Ernesto Arellano</Text>
+            <Text style={styles.h2}>Full Stack Web Developer</Text>
+            <View style={styles.section}>
+              <View style={styles.info}>
+                <Text style={styles.infoText}>
+                  <MailIcon className="w-6 h-6 mr-2 stroke-dawn" />
+                  ernestoarellano@icloud.com
+                </Text>
+                <Text style={styles.infoText}>
+                  <PhoneIcon className="w-6 h-6 mr-2 stroke-dawn" />
+                  (760) 425-0710
+                </Text>
+                <Text style={styles.infoText}>
+                  <GlobeAltIcon className="w-6 h-6 mr-2 stroke-dawn" />
+                  ernestoarellano.dev
+                </Text>
+              </View>
+            </View>
+          </View>
           <View style={styles.left}>
             <View style={styles.section}>
-              <Text style={styles.h1}>Ernesto Arellano</Text>
-              <Text style={styles.h2}>Full Stack Web Developer</Text>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>About</Text>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>Experience</Text>
+              <Text style={styles.sectionTitle}>Relevant Experience</Text>
               <View style={styles.job}>
                 <View style={styles.jobHead}>
                   <View style={styles.jobRole}>
@@ -126,7 +184,7 @@ const PDF = () => {
                     <Text style={styles.jobTitle}>
                       Full Stack Web Developer
                     </Text>
-                    <Text>Big Rig Media</Text>
+                    <Text style={styles.jobCompany}>Big Rig Media</Text>
                   </View>
                   <View>
                     <Text style={styles.jobDate}>July 2013 - July 2015</Text>
@@ -156,7 +214,7 @@ const PDF = () => {
                     <Text style={styles.jobTitle}>
                       Junior Full Stack Web Developer
                     </Text>
-                    <Text>Conveyor Group</Text>
+                    <Text style={styles.jobCompany}>Conveyor Group</Text>
                   </View>
                   <View>
                     <Text style={styles.jobDate}>July 2011 - July 2013</Text>
@@ -183,7 +241,7 @@ const PDF = () => {
                 <View style={styles.jobHead}>
                   <View style={styles.jobRole}>
                     <Text style={styles.jobTitle}>Intern</Text>
-                    <Text>Conveyor Group</Text>
+                    <Text style={styles.jobCompany}>Conveyor Group</Text>
                   </View>
                   <View>
                     <Text style={styles.jobDate}>May 2011 - July 2011</Text>
@@ -207,7 +265,28 @@ const PDF = () => {
           </View>
           <View style={styles.right}>
             <View style={styles.section}>
-              <Text>Ernesto Arellano</Text>
+              <Text style={styles.sectionTitle}>Skills</Text>
+              <View style={styles.skill}>
+                <Text style={styles.skillTitle}>Programming Languages</Text>
+                <Text>
+                  PHP, JavaScript (ES6), TypeScript, HTML, CSS/Sass, GraphQL
+                </Text>
+              </View>
+              <View style={styles.skill}>
+                <Text style={styles.skillTitle}>Libraries & Frameworks</Text>
+                <Text>Tailwind CSS, React, Next.js, Gatsby, jQuery</Text>
+              </View>
+              <View style={styles.skill}>
+                <Text style={styles.skillTitle}>Tools & Platforms</Text>
+                <Text>
+                  Git, Gulp, Webpack, Netlify, Vercel, Heroku, Contentful,
+                  Strapi, WordPress
+                </Text>
+              </View>
+              <View style={styles.skill}>
+                <Text style={styles.skillTitle}>Design</Text>
+                <Text>Figma, Sketch, Photoshop</Text>
+              </View>
             </View>
           </View>
         </View>

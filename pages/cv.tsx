@@ -11,7 +11,7 @@ const CV = () => {
       <header className="header">
         <Logo />
       </header>
-      <main className="py-12">
+      <main className="py-24 lg:py-32">
         <div className="relative flex flex-col w-full max-w-[1000px] mx-auto space-y-12">
           <PDF />
         </div>
