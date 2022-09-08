@@ -1,4 +1,8 @@
-import { GlobeAltIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import {
+  DevicePhoneMobileIcon,
+  EnvelopeIcon,
+  GlobeAltIcon,
+} from '@heroicons/react/24/outline'
 import { Document, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
 import { useWindowSize } from 'hooks/useWindowSize'
 
@@ -125,11 +129,11 @@ const PDF = () => {
             <View style={styles.section}>
               <View style={styles.info}>
                 <Text style={styles.infoText}>
-                  <MailIcon className="w-6 h-6 mr-2 stroke-dawn" />
+                  <EnvelopeIcon className="w-6 h-6 mr-2 stroke-dawn" />
                   ernestoarellano@icloud.com
                 </Text>
                 <Text style={styles.infoText}>
-                  <PhoneIcon className="w-6 h-6 mr-2 stroke-dawn" />
+                  <DevicePhoneMobileIcon className="w-6 h-6 mr-2 stroke-dawn" />
                   (760) 425-0710
                 </Text>
                 <Text style={styles.infoText}>

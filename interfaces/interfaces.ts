@@ -20,6 +20,24 @@ interface Job {
   description: string
 }
 
+interface Project {
+  id: string
+  attributes: {
+    Tag: string
+    Title: string
+    Description: string
+    Thumbnail: {
+      data: {
+        attributes: {
+          url: string
+        }
+      }
+    }
+    Website: string
+    Tech: string
+  }
+}
+
 export interface LocaleTime {
   hour?: string
   minute?: string
@@ -81,8 +99,7 @@ export interface PostProps {
 
 export interface HomePageProps {
   content: string
-  repos: Repo[]
-  posts: Post[]
+  projects: Project[]
 }
 
 export interface PostPageProps {
@@ -120,6 +137,19 @@ export interface JobProps {
 
 export interface TimelineProps {
   jobs: Job[]
+}
+
+export interface ProjectsProps {
+  projects: Project[]
+}
+
+export interface ProjectProps {
+  tag: string
+  title: string
+  description: string
+  thumbnail: string
+  website: string
+  tech: string
 }
 
 export interface HamburgerProps {

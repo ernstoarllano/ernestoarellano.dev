@@ -1,8 +1,8 @@
 import About from 'components/about/Intro'
 import Resume from 'components/about/Resume'
+import Projects from 'components/builds/Projects'
 import Timeline from 'components/experience/Timeline'
 import Footer from 'components/Footer'
-import Repos from 'components/github/Repos'
 import Header from 'components/header/Header'
 import Hero from 'components/Hero'
 import Profiles from 'components/social/Profiles'
@@ -13,9 +13,9 @@ import { HomePageProps } from 'interfaces/interfaces'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { getPage } from 'services/getPage'
-import { getRepos } from 'services/getRepos'
+import { getProjects } from 'services/getProjects'
 
-const HomePage = ({ content, repos }: HomePageProps) => {
+const HomePage = ({ content, projects }: HomePageProps) => {
   const { width } = useWindowSize()
   const isDesktop = width >= 1024
 
@@ -29,7 +29,7 @@ const HomePage = ({ content, repos }: HomePageProps) => {
       <main className="space-y-24 lg:space-y-48">
         <About content={content} />
         <Timeline jobs={jobs} />
-        <Repos repos={repos} />
+        <Projects projects={projects} />
         <Footer />
       </main>
       <Profiles profiles={profiles} />
@@ -41,12 +41,12 @@ const HomePage = ({ content, repos }: HomePageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const { content } = await getPage(1)
-    const { repos } = await getRepos()
+    const { projects } = await getProjects()
 
     return {
       props: {
         content,
-        repos,
+        projects,
       },
       revalidate: 43200,
     }

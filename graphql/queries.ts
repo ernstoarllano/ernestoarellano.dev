@@ -59,3 +59,27 @@ export const getStrapiPage = gql`
     }
   }
 `
+
+export const getStrapiProjects = gql`
+  query Projects {
+    projects(sort: "id:desc") {
+      data {
+        id
+        attributes {
+          Tag
+          Title
+          Description
+          Thumbnail {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          Website
+          Tech
+        }
+      }
+    }
+  }
+`
