@@ -16,10 +16,11 @@ const Project = ({
         <a href={website} target="_blank" rel="noopener noreferrer">
           <Image
             src={getImageURL(thumbnail)}
-            alt="HTR"
+            alt={title}
             layout="responsive"
             width={680}
             height={380}
+            loading="lazy"
           />
         </a>
       </div>
