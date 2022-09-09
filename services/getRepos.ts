@@ -5,6 +5,14 @@ type ReposPromise = {
   repos: Record<string, any>[]
 }
 
+type PinnedRepos = {
+  user: {
+    pinnedItems: {
+      nodes: Record<string, any>[]
+    }
+  }
+}
+
 export const getRepos = async (): Promise<
   ReposPromise | Record<any, never>
 > => {
@@ -13,7 +21,7 @@ export const getRepos = async (): Promise<
       user: {
         pinnedItems: { nodes },
       },
-    } = await octokit(`
+    } = await octokit<PinnedRepos>(`
       query {
         user(login: "ernstoarllano") {
           pinnedItems(first: 6, types: REPOSITORY) {
