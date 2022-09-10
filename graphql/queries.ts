@@ -78,6 +78,7 @@ export const getStrapiProjects = gql`
           }
           Website
           Tech
+          GitHub
         }
       }
     }

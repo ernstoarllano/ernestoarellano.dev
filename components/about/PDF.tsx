@@ -152,7 +152,7 @@ const PDF = () => {
                     <Text style={styles.jobTitle}>
                       Senior Full Stack Web Developer
                     </Text>
-                    <Text>Big Rig Media</Text>
+                    <Text style={styles.jobCompany}>Big Rig Media</Text>
                   </View>
                   <View>
                     <Text style={styles.jobDate}>July 2015 - Present</Text>
@@ -179,7 +179,9 @@ const PDF = () => {
                   <Text
                     style={styles.jobDescription}
                   >{`Architect and conceptualize custom products like Xpress, the company's rapid website builder to cut build times by 60%`}</Text>
-                  <Text>{`Contribute code and ideas to the company's proprietary SaaS application`}</Text>
+                  <Text
+                    style={styles.jobDescription}
+                  >{`Contribute code and ideas to the company's proprietary SaaS application`}</Text>
                 </View>
               </View>
               <View style={styles.job}>

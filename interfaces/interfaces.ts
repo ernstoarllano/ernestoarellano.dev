@@ -35,6 +35,7 @@ interface Project {
     }
     Website: string
     Tech: string
+    GitHub: string
   }
 }
 
@@ -150,6 +151,7 @@ export interface ProjectProps {
   thumbnail: string
   website: string
   tech: string
+  github: string
 }
 
 export interface HamburgerProps {

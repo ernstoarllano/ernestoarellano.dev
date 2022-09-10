@@ -28,6 +28,7 @@ const Projects = ({ projects }: ProjectsProps) => {
                   thumbnail={project.attributes.Thumbnail.data.attributes.url}
                   website={project.attributes.Website}
                   tech={project.attributes.Tech}
+                  github={project.attributes.GitHub}
                 />
               ))}
             </div>
