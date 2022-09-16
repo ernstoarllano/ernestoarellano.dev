@@ -37,7 +37,7 @@ const Intro = ({ content }: IntroProps) => {
             <div className="profile">
               <Image
                 className="mix-blend-multiply grayscale"
-                src="/1517497599569.jpg"
+                src="/me.jpg"
                 alt="Ernesto Arellano"
                 layout="responsive"
                 width={337}
