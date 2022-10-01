@@ -10,9 +10,19 @@ interface Job {
 export const jobs: Job[] = [
   {
     id: 1,
+    title: 'Full Stack Engineer',
+    company: 'Dispel',
+    date: 'Sept 2022 - Present',
+    location: 'Austin, TX',
+    description: `
+      <li>TBD</li>
+    `,
+  },
+  {
+    id: 2,
     title: 'Senior Full Stack Web Developer',
     company: 'Big Rig Media',
-    date: 'Jul 2015 - Present',
+    date: 'Jul 2015 - Sept 2022',
     location: 'La Quinta, CA',
     description: `
       <li>Serve as a technical consultant between various stake holders: project managers, designers, marketers, clients</li>
@@ -24,7 +34,7 @@ export const jobs: Job[] = [
     `,
   },
   {
-    id: 2,
+    id: 3,
     title: 'Full Stack Web Developer',
     company: 'Big Rig Media',
     date: 'August 2013 - July 2015',
@@ -36,7 +46,7 @@ export const jobs: Job[] = [
     `,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Junior Full Stack Web Developer',
     company: 'Conveyor Group',
     date: 'July 2011 - Jul 2013',
@@ -49,7 +59,7 @@ export const jobs: Job[] = [
     `,
   },
   {
-    id: 4,
+    id: 5,
     title: 'Intern',
     company: 'Conveyor Group',
     date: 'May 2011 - Jul 2011',

@@ -150,12 +150,30 @@ const PDF = () => {
                 <View style={styles.jobHead}>
                   <View style={styles.jobRole}>
                     <Text style={styles.jobTitle}>
+                      Full Stack Engineer
+                    </Text>
+                    <Text style={styles.jobCompany}>Dispel</Text>
+                  </View>
+                  <View>
+                    <Text style={styles.jobDate}>Sept 2022 - Present</Text>
+                  </View>
+                </View>
+                <View style={styles.jobDescriptionContainer}>
+                  <Text style={styles.jobDescription}>
+                    TBD
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.job}>
+                <View style={styles.jobHead}>
+                  <View style={styles.jobRole}>
+                    <Text style={styles.jobTitle}>
                       Senior Full Stack Web Developer
                     </Text>
                     <Text style={styles.jobCompany}>Big Rig Media</Text>
                   </View>
                   <View>
-                    <Text style={styles.jobDate}>July 2015 - Present</Text>
+                    <Text style={styles.jobDate}>July 2015 - Sept 2022</Text>
                   </View>
                 </View>
                 <View style={styles.jobDescriptionContainer}>
