@@ -45,21 +45,6 @@ export interface LocaleTime {
   seconds?: string
   period?: string
 }
-
-export interface RepoProps {
-  url: string
-  homepageUrl?: string
-  primaryLanguage: {
-    name: string
-  }
-  name: string
-  description: string
-}
-
-export interface ReposProps {
-  repos: Repo[]
-}
-
 export interface Post {
   id: string
   attributes: {

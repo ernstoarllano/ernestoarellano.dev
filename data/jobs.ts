@@ -10,10 +10,10 @@ interface Job {
 export const jobs: Job[] = [
   {
     id: 1,
-    title: 'Full Stack Engineer',
+    title: 'Senior Full Stack Engineer',
     company: 'Dispel',
     date: 'Sept 2022 - Present',
-    location: 'Austin, TX',
+    location: 'Brooklyn, NY',
     description: `
       <li>TBD</li>
     `,

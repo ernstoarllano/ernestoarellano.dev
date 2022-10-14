@@ -1,7 +1,7 @@
 import {
   DevicePhoneMobileIcon,
   EnvelopeIcon,
-  GlobeAltIcon,
+  GlobeAltIcon
 } from '@heroicons/react/24/outline'
 import { Document, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
 import { useWindowSize } from 'hooks/useWindowSize'
@@ -125,7 +125,7 @@ const PDF = () => {
         <View style={styles.container}>
           <View style={styles.intro}>
             <Text style={styles.h1}>Ernesto Arellano</Text>
-            <Text style={styles.h2}>Full Stack Web Developer</Text>
+            <Text style={styles.h2}>Full Stack Engineer</Text>
             <View style={styles.section}>
               <View style={styles.info}>
                 <Text style={styles.infoText}>
@@ -150,7 +150,7 @@ const PDF = () => {
                 <View style={styles.jobHead}>
                   <View style={styles.jobRole}>
                     <Text style={styles.jobTitle}>
-                      Full Stack Engineer
+                      Senior Full Stack Engineer
                     </Text>
                     <Text style={styles.jobCompany}>Dispel</Text>
                   </View>
