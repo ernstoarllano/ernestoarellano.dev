@@ -10,4 +10,4 @@
   <img src="https://img.shields.io/github/deployments/ernstoarllano/ernestoarellano.dev/production?label=vercel&logo=vercel&logoColor=white" alt="Vercel Status" />
 </p>
 
-![v2](https://raw.githubusercontent.com/ernstoarllano/ernestoarellano.dev/1358f5c0d32974a58592ec7d726ce06febd9993a/public/ernestoarellano.jpg)
+![v2](https://github.com/ernstoarllano/ernestoarellano.dev/blob/9791b3dbb925981953d3de79eaeabbcb25ae4f7e/public/ernestoarellano.jpg)
