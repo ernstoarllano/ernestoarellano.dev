@@ -14,11 +14,16 @@ const Project = ({
   return (
     <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:grid-rows-4 space-y-reverse space-y-6 group">
       <div className="lg:col-start-1 lg:col-end-8 lg:group-odd:col-start-7 lg:group-odd:col-end-[-1] lg:row-start-1 lg:row-end-[-1] shadow-2xl">
-        <a href={website} target="_blank" rel="noopener noreferrer">
+        <a
+          className="block w-full h-full"
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
+            className="w-full h-full object-cover"
             src={getImageURL(thumbnail)}
             alt={title}
-            layout="responsive"
             width={680}
             height={380}
             loading="lazy"

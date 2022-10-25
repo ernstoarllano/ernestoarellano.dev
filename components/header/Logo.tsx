@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Logo = () => {
   return (
     <div className="relative">
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a className="block w-10 h-10">
           <svg
             viewBox="0 0 548 548"

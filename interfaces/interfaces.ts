@@ -142,3 +142,7 @@ export interface ProjectProps {
 export interface HamburgerProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>
 }
+
+export interface ShareProps {
+  url: string
+}

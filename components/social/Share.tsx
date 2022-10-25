@@ -1,4 +1,6 @@
-const Share = ({ url }: any) => {
+import { ShareProps } from 'interfaces/interfaces'
+
+const Share = ({ url }: ShareProps) => {
   return (
     <div className="flex items-center space-x-8">
       <ul className="flex items-center !pl-0 !list-none space-x-6 !space-y-0">

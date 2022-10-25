@@ -70,7 +70,7 @@ const PostPage = ({ post, content }: PostPageProps) => {
               className="text-base leading-loose space-y-6"
               dangerouslySetInnerHTML={{ __html: content }}
             />
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a className="inline-flex mt-12">Back</a>
             </Link>
           </div>

@@ -19,7 +19,7 @@ const Blog = ({ posts }: BlogProps) => {
               <span className="mr-2 text-sandstone">04.</span>Blog
             </h3>
             <div className="grid md:grid-cols-2 gap-3 group">
-              {posts.map((post: any) => (
+              {posts.map((post) => (
                 <Post
                   key={post.id}
                   title={post.attributes.Title}
