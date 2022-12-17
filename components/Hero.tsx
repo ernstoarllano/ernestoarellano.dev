@@ -12,12 +12,6 @@ const Hero = () => {
           </h2>
         </hgroup>
         <p>{`I'm a full stack engineer (and occassional designer).`}</p>
-        <a
-          className="inline-block px-5 py-3 font-semibold text-charcoal tracking-widest uppercase bg-dawn transition-all duration-700 lg:hover:bg-sandstone"
-          href="mailto:ernestoarellano@icloud.com"
-        >
-          Available for Hire
-        </a>
       </div>
     </section>
   )
