@@ -6,33 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "turbo": "next dev --turbo --show-all",
+    "check-types": "tsc --noEmit",
+    "check-lint": "eslint . --ext ts, --ext tsx",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@apollo/client": "^3.7.9",
-    "@fontsource/poppins": "^4.5.10",
-    "@heroicons/react": "^2.0.16",
-    "@react-pdf/renderer": "^3.1.5",
-    "@sentry/nextjs": "^7.38.0",
-    "@types/node": "18.14.0",
+    "@next/font": "13.2.1",
+    "@types/node": "18.14.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@vercel/analytics": "^0.1.10",
-    "autoprefixer": "^10.4.13",
-    "classnames": "^2.3.2",
     "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
-    "graphql": "^16.6.0",
-    "next-plausible": "^3.7.2",
-    "postcss": "^8.4.21",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.2",
-    "tailwindcss": "^3.2.7",
+    "eslint-config-next": "13.2.1",
+    "next": "13.2.1",
+    "radash": "^10.7.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "clsx": "^1.2.1",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.21",
+    "tailwind-merge": "^1.10.0",
+    "tailwindcss": "^3.2.7"
   }
 }

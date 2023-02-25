@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-      },
       colors: {
         sand: '#eee8dd',
         spruce: '#2c3a26',
@@ -16,20 +13,6 @@ module.exports = {
         sandstone: '#e8be7c',
         dawn: '#d7684a',
         charcoal: '#272323',
-        spotify: '#1ed760',
-        php: '#787cb5',
-        react: '#61dBfb',
-        gatsby: '#639',
-        typescript: '#3178c6',
-        javascript: '#f7df1e',
-        graphql: '#e535ab',
-        tailwind: '#07b6d5',
-        sanity: '#f04939',
-        strapi: '#8e75ff',
-        wordpress: '#00749c'
-      },
-      opacity: {
-        important: '1 !important',
       }
     },
   },

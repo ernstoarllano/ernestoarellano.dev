@@ -1,3 +1,4 @@
+import { debounce } from 'radash'
 import { useEffect, useState } from 'react'
 
 export const useWindowSize = () => {
@@ -10,10 +11,10 @@ export const useWindowSize = () => {
 
     handleWindowResize()
 
-    window.addEventListener('resize', handleWindowResize)
+    window.addEventListener('resize', debounce({ delay: 10 }, handleWindowResize))
 
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
+    return () => window.removeEventListener('resize', debounce({ delay: 10 }, handleWindowResize))
+  })
 
   return { width }
 }

@@ -7,8 +7,8 @@ export const useElementOnScreen = (
     threshold: 0.1,
   }
 ) => {
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState<boolean | false>(false)
+  const ref = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState<boolean>(false)
 
   const handleObserver = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries
@@ -20,7 +20,7 @@ export const useElementOnScreen = (
     const observer = new IntersectionObserver(handleObserver, options)
 
     if (ref.current) observer.observe(ref.current)
-  }, [options, ref])
+  }, [ref])
 
   return { ref, isVisible }
 }
