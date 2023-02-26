@@ -32,16 +32,10 @@ export default function Intro() {
           <div className="lg:col-span-7 space-y-6">
             <div className="leading-relaxed space-y-6">
               <p>
-                {`Well hello there! My name is Ernesto and I enjoy creating things
-                for the web. I first got into web development back in 2011 when
-                I started messing around with HTML & CSS. Soon after that I
-                found myself as an intern learning about other things like PHP,
-                jQuery and plenty more.`}
+                {`I'm a full stack engineer with over 10 years of experience helping businesses solve complex problems and buliding engaging experiences for users.`}
               </p>
               <p>
-                {`Fast forward 10 years and I am still as excited about learning
-                new technologies as when I first started learning about web
-                development.`}
+                {`This website is a place where I can showcase some of my latest work, but it's also a sandbox for me to test out new techniques and libraries.`}
               </p>
               <p>{`Below are a few technologies I'm currently working with:`}</p>
             </div>
@@ -53,6 +47,8 @@ export default function Intro() {
               <li className="font-bold">Storybook</li>
               <li className="font-bold">Jest</li>
               <li className="font-bold">Prisma</li>
+              <li className="font-bold">Tailwind CSS</li>
+              <li className="font-bold">Radix UI</li>
             </ul>
           </div>
           <div

@@ -20,7 +20,7 @@ export const useElementOnScreen = (
     const observer = new IntersectionObserver(handleObserver, options)
 
     if (ref.current) observer.observe(ref.current)
-  }, [ref])
+  }, [options, ref])
 
   return { ref, isVisible }
 }

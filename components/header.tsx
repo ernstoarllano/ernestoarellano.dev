@@ -8,11 +8,15 @@ import { HeaderProps } from '@/types/header'
 import Logo from '@/components/logo'
 import Nav from '@/components/nav'
 
+import { useWindowSize } from '@/hooks/useWindowSize'
 import { cn } from '@/utils/styles'
 
 export default function Header({ showNav }: HeaderProps) {
   const [y, setY] = useState<number>(0)
   const [direction, setDirection] = useState<string>('none')
+
+  const { width } = useWindowSize()
+  const isDesktop = width > 1024
 
   const directionClasses = cn({
     'bg-spruce translate-y-0 shadow-2xl': direction === 'up',
@@ -52,7 +56,7 @@ export default function Header({ showNav }: HeaderProps) {
       )}
     >
       <Logo />
-      {showNav && <Nav />}
+      {showNav && isDesktop && <Nav />}
     </header>
   )
 }

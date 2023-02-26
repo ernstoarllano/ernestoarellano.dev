@@ -1,5 +1,7 @@
 'use client'
 
+import { projects } from '@/config/projects'
+
 import Project from '@/components/project'
 
 import { useElementOnScreen } from '@/hooks/useElementOnScreen'
@@ -24,9 +26,9 @@ export default function Projects() {
           <span className="mr-2 text-sandstone">03.</span>Projects
         </h3>
         <div className="space-y-32">
-          <Project />
-          <Project />
-          <Project />
+          {projects.map((project, i) => (
+            <Project key={i} project={project} />
+          ))}
         </div>
       </div>
     </section>
