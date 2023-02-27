@@ -5,7 +5,6 @@ import { GenericLayoutProps } from '@/types/layouts'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Hero from '@/components/hero'
-import Resume from '@/components/resume'
 import Social from '@/components/social'
 
 import { cn } from '@/utils/styles'
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: GenericLayoutProps) {
         <Hero />
         <main className="space-y-24 lg:space-y-48">{children}</main>
         <Social />
-        <Resume />
         <Footer />
       </body>
     </html>
