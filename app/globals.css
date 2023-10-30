@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 271 54% 8%;
+    --foreground: 0 100% 100%;
+
+    --primary: 302 83% 55%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 271 54% 8%;
+    --foreground: 0 100% 100%;
+
+    --primary: 281 74% 100%;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Premier League Bold';
+    src: url('/premier-league-bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Premier League Regular';
+    src: url('/premier-league-regular.woff2') format('woff2');
+  }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #eb2be3 #14091e;
+  }
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background: #14091e;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #eb2be3;
+    border: 3px solid #14091e;
+    border-radius: 10px;
+  }
+}
+
+@layer utilities {
+  .bg-gradient {
+    background-image: linear-gradient(
+      to left top,
+      #000000,
+      #1c0912,
+      #2b0f20,
+      #391233,
+      #441749,
+      #551b55,
+      #681e61,
+      #7b216c,
+      #9b2165,
+      #b42b59,
+      #c73d4b,
+      #d3553b
+    );
+  }
+
+  .bg-gradient-t {
+    background-image: linear-gradient(
+      to top,
+      #9b2165 0%,
+      #b42b59 36.46%,
+      #c73d4b 68.23%,
+      #fdb306 100%
+    );
+  }
+}

@@ -1,33 +1,36 @@
-'use client'
+import { projects } from '@/data/projects'
 
-import { projects } from '@/config/projects'
-
-import Project from '@/components/project'
-
-import { useElementOnScreen } from '@/hooks/useElementOnScreen'
-import { cn } from '@/utils/styles'
-
-export default function Projects() {
-  const { ref, isVisible } = useElementOnScreen()
-
-  const titleActiveClasses = cn({
-    'after:w-[300px] after:bg-sandstone': isVisible,
-  })
-
+/**
+ * Component for displaying projects
+ *
+ * @returns {React.ReactElement} The projects component
+ */
+export function Projects() {
   return (
-    <section id="projects" className="scroll-m-8" ref={ref}>
-      <div className="w-full lg:max-w-[1000px] lg:mx-auto space-y-12 lg:space-y-24">
-        <h3
-          className={cn(
-            `flex items-center text-sm tracking-widest after:content-[''] after:block after:w-0 after:h-[2px] after:ml-6 after:bg-transparent after:transition-all after:duration-700`,
-            titleActiveClasses
-          )}
-        >
-          <span className="mr-2 text-sandstone">03.</span>Projects
-        </h3>
-        <div className="space-y-32">
-          {projects.map((project, i) => (
-            <Project key={i} project={project} />
+    <section id="projects" className="lg:py-32">
+      <div className="w-full max-w-5xl mx-auto space-y-6">
+        <h2 className="font-premier-league-bold text-2xl tracking-widest uppercase">
+          Projects
+        </h2>
+        <div className="grid gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="lg:grid lg:grid-cols-6 lg:gap-4">
+              <div className="lg:col-span-1">
+                <span className="font-thin opacity-70">{project.date}</span>
+                <h3 className="font-premier-league-bold text-md">
+                  {project.title}
+                </h3>
+              </div>
+              <div className="lg:col-span-5 space-y-6">
+                <p className="text-lg">{project.description}</p>
+                <div className="space-y-3">
+                  <span className="font-premier-league-bold">
+                    {project.stack}
+                  </span>
+                </div>
+                <div className="lg:col-span-6 lg:h-96 bg-background rounded-lg"></div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

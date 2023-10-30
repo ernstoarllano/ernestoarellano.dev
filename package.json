@@ -7,30 +7,34 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "turbo": "next dev --turbo --show-all",
-    "check-types": "tsc --noEmit",
-    "check-lint": "eslint . --ext ts, --ext tsx",
-    "format": "prettier --write .",
+    "prettier": "prettier --write .",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@types/node": "18.14.1",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1",
-    "next": "13.2.1",
-    "radash": "^10.7.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.290.0",
+    "next": "14.0.0",
+    "next-themes": "^0.2.1",
+    "radash": "^11.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "clsx": "^1.2.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
     "husky": "^8.0.3",
-    "postcss": "^8.4.21",
-    "tailwind-merge": "^1.10.0",
-    "tailwindcss": "^3.2.7"
+    "postcss": "^8",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3",
+    "typescript": "^5"
   }
 }

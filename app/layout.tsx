@@ -1,40 +1,33 @@
-import { Poppins } from 'next/font/google'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 
 import { GenericLayoutProps } from '@/types/layouts'
 
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import Hero from '@/components/hero'
-import Social from '@/components/social'
+import { Progress } from '@/components/progress'
+import { Sidebar } from '@/components/sidebar'
 
-import { cn } from '@/utils/styles'
+import './globals.css'
 
-import '@/styles/global.css'
+const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Ernesto Arellano | Senior Full Stack Engineer',
+export const metadata: Metadata = {
+  title: 'Ernesto Arellano',
+  description: 'Front-End Engineer',
 }
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-})
-
+/**
+ * Component that wraps all pages.
+ *
+ * @param {GenericLayoutProps} props The component props
+ * @returns {React.ReactElement} The component
+ */
 export default function RootLayout({ children }: GenericLayoutProps) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          'px-4 lg:px-0 font-poppins text-base font-normal  text-sand render-legibility bg-spruce image-topography bg-fixed',
-          poppins.variable
-        )}
-      >
-        <Header showNav={true} />
-        <Hero />
-        <main className="space-y-24 lg:space-y-48">{children}</main>
-        <Social />
-        <Footer />
+      <body className="font-premier-league-regular text-foreground bg-gradient bg-fixed">
+        <Progress />
+        <Sidebar />
+        <main>{children}</main>
       </body>
     </html>
   )
